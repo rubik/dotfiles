@@ -1,0 +1,60 @@
+######################
+# - Conky settings - #
+######################
+background yes
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont URW Gothic L:size=7.5
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_argb_visual yes
+#own_window_argb_value 100
+
+alignment tl
+gap_x 355
+gap_y 10
+maximum_size 300 100
+default_bar_size 60 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_outline no
+draw_shades no
+
+default_outline_color ff8424
+default_color ffffff
+default_shade_color 1d1d1d
+color0 ffffff
+color1 1d1d1d
+color2 6cf51d
+
+TEXT
+
+${voffset -8}
+${goto 92}${color2}/ ${goto 140}${color0}${fs_used_perc /}% ${goto 170}${fs_bar 8,32 /}     ${color0}${fs_used /} ${color2}/ ${color0}${fs_size /}${color}
+${goto 92}${color2}/HOME ${goto 140}${color0}${fs_used_perc /home}% ${goto 170}${fs_bar 8,32 /home}     ${color0}${fs_used /home} ${color2}/ ${color0}${fs_size /home}${color}
+${voffset -10}
+${goto 92}${color2}RAM ${goto 140}${color0}${memperc}% ${goto 170}${membar 8,32}     ${color0}${mem} ${color2}/ ${color0}${memmax}
+#${image ~/.conkytheme/base.png -p 10,0 -s 339x86}
+${image ~/.conkytheme/Memory.png -p 32,20 -s 45x45}

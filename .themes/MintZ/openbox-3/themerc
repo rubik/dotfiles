@@ -1,0 +1,69 @@
+!! Menu background
+menu.items.bg: flat 
+menu.items.bg.color: #fefefe
+
+!! Menu text
+menu.items.text.color: #212121
+menu.items.justify: left
+menu.items.disabled.text.color: #606060
+
+!! Menu headers
+menu.title.bg: vertical gradient flat
+menu.title.bg.color: #bcdd9a
+menu.title.bg.colorTo: #accd8a
+menu.title.text.color: white
+menu.title.text.justify: left
+
+!! Selected menu item
+menu.items.active.bg: flat
+menu.items.active.bg.color: #accd8a
+menu.items.active.text.color: #fefefe
+
+!! Titlebar
+window.active.title.bg: flat splitvertical gradient
+window.active.title.bg.color.splitTo: #e4e4e4
+window.active.title.bg.color: #dcdcdc
+window.active.title.bg.colorTo: #dbdbdb
+window.active.title.bg.colorTo.splitTo: #d6d6d6
+window.inactive.title.bg: gradient splitvertical gradient flat
+window.inactive.title.bg.color: #dcdcdc
+window.inactive.title.bg.colorTo: #dbdbdb
+window.inactive.title.bg.color.splitTo: #e4e4e4
+window.inactive.title.bg.colorTo.splitTo: #d6d6d6
+
+!! Titlebar text
+window.label.text.justify: center
+window.active.label.bg: parentrelative
+window.active.label.text.color: #212121
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #747474
+
+!! Window buttons
+window.*.button.*.bg: parentrelative
+window.active.button.*.hover.bg: parentrelative
+window.inactive.button.*.hover.bg: parentrelative
+window.*.button.*.pressed.bg: flat parentrelative
+
+window.active.button.*.hover.image.color: #accd8a
+window.active.button.*.pressed.image.color: #accd8a
+
+window.active.button.*.image.color: #343434
+window.inactive.button.*.image.color: #747474
+
+!! Borders
+window.active.border.color: #d6d6d6
+window.inactive.border.color: #d6d6d6
+border.width: 1
+padding.width: 3
+window.handle.width: 0
+window.active.client.color:  #d6d6d6
+window.inactive.client.color:  #d6d6d6
+window.client.padding.width: 2
+window.client.padding.height: 0
+menu.overlap: 0
+
+
+!! On-screen displays
+osd.bg: gradient vertical flat
+osd.bg.color: #444444
+osd.bg.colorTo: #343434
