@@ -25,3 +25,4 @@ conky -c ~/.conky/conkyrc_memory &
 conky -c ~/.conky/conkyrc_network &
 conky -c ~/.conky/conkyrc_system &
 conky -c ~/.conky/conkyrc_clock &
+thunar --daemon &
