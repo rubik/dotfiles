@@ -1,8 +1,8 @@
-# OS
+## OS
 
 ArchLinux + OpenBox 3.5.0 + Tint2-svn + Conky 1.9.0
 
-# Necessary packages
+## Necessary packages
 
 Desktop Environment
 
@@ -16,16 +16,14 @@ Desktop Environment
 Other dotfiles are from
 
 * thunar
-
   * thunar-volman
-
 * vim
 * xorg
-
   * xorg-xinit
 
 
-# Default configuration
+## Default configuration
 
 The default configuration looks like this (desktop screenshot):
+
 [![Desktop screenshot](http://i46.tinypic.com/2i6z8qq.png)](http://i50.tinypic.com/141jozt.png)
