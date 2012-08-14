@@ -41,6 +41,9 @@ au filetype python map <F2> :w<CR> :!clear<CR> :!ipython2<CR>
 au filetype python map <F5> :w<CR> :!clear<CR> :!ipython2 %<CR>
 au filetype python map <F7> :w<CR> :!clear<CR> :!python2 -m doctest -v %<CR>
 
+au BufRead,BufNewFile *.kv set filetype=kivy
+au! Syntax kivy source $HOME/.vim/colors/kivy.vim
+
 colorscheme navajo-night
 filetype plugin on
 filetype on

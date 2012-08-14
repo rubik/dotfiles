@@ -345,6 +345,11 @@
         <command>gksudo pm-suspend</command>
       </action>
     </keybind>
+    <keybind key="C-S-a">
+        <action name="Execute">
+            <command>gksudo halt</command>
+        </action>
+    </keybind>
     <keybind key="C-l">
       <action name="Exit">
         <prompt>yes</prompt>
