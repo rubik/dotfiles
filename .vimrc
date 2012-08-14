@@ -41,6 +41,7 @@ au filetype python map <F2> :w<CR> :!clear<CR> :!ipython2<CR>
 au filetype python map <F5> :w<CR> :!clear<CR> :!ipython2 %<CR>
 au filetype python map <F7> :w<CR> :!clear<CR> :!python2 -m doctest -v %<CR>
 
+" Add colorscheme for Kivy files
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/colors/kivy.vim
 
@@ -49,6 +50,8 @@ filetype plugin on
 filetype on
 filetype indent on
 
+" Keep PyComplexity always on
+let g:complexity_always_on = 1
 set hls
 set hid
 set expandtab
