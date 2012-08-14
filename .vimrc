@@ -49,8 +49,6 @@ filetype plugin on
 filetype on
 filetype indent on
 
-set ofu=syntaxcomplete#Complete
-let g:pydiction_location='~/.vim/complete-dict'
 set hls
 set hid
 set expandtab
