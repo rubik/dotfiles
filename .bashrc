@@ -6,7 +6,13 @@ alias upd='sudo pacman -Syy && sudo pacman -Syu'
 
 export EDITOR='vim'
 # Bash prompt
-export PS1="\[\033[1;31m[\[\033[1;33m\$(date +%H:%M)\[\033[1;31m] \u:\[\033[1;32m\W\[\033[1;37m\$\[\033[0m\] "
+bold_style=$(tput bold)
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+yellow=$(tput setaf 3)
+white=$(tput setaf 7)
+reset=$(tput sgr0)
+export PS1="\[$bold_style\]\[$red\][\[$yellow\]\A\[$red\]] \u@\h:\[$green\]\W\[$white\]\$\[$reset\] "
 
 # Sudo TAB completion
 complete -cf sudo
