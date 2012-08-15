@@ -203,7 +203,11 @@ def show_complexity():
 
 def compute_scores_for(filename=None, code=None):
     if filename:
-        code = open(filename).read()
+        if os.path.exists(filename):
+            with open(filename) as fobj:
+                code = fobj.read()
+        else:
+            code = ''
     scores = compute_code_complexity(code).results.ordered_by_line()
     return scores
 
