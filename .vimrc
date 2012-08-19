@@ -53,6 +53,8 @@ filetype indent on
 
 " Keep PyComplexity always on
 let g:complexity_always_on = 1
+let mapleader = ','
+
 set hls
 set hid
 set expandtab
