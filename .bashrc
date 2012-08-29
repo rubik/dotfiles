@@ -7,6 +7,24 @@ alias orph='sudo pacman -R $(pacman -Qtdq)'
 alias cacheclean='sudo cacheclean -v 1'
 
 export EDITOR='vim'
+export PATH=$PATH:~/android-sdk-linux/tools
+export PATH=$PATH:~/android-sdk-linux/platform-tools
+android-proj() {
+  # Create a new Android project
+  # ----------------------------
+  # Arguments:
+  # * $1: Target
+  # * $2: Project Name
+  # * $2: Workspace (default to ~/android-workspace
+  local _workspace=$HOME/android-workspace
+  target=$1
+  name=$2
+  workspace=${3-$_workspace}
+  android create project --target $target --name $name \
+      --path $workspace/$name --activity MainActivity \
+      --package com.mine.${name,,}
+}
+
 # Bash prompt
 bold_style=$(tput bold)
 red=$(tput setaf 1)
@@ -56,7 +74,7 @@ cb() {
 # Aliases / functions leveraging the cb() function
 # ------------------------------------------------
 # Copy contents of a file
-function cbf() { cat "$1" | cb; }  
+alias cbf="cat "$1" | cb"
 # Copy SSH public key
 alias cbssh="cb ~/.ssh/id_rsa.pub"  
 # Copy current working directory
@@ -66,3 +84,5 @@ alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 
 # Sudo TAB completion
 complete -cf sudo
+# Git TAB completion
+source $HOME/.git-completion.bash

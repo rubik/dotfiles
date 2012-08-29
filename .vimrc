@@ -22,6 +22,7 @@ syntax on
 map <C-right> :bn<CR>
 map <C-left> :bp<CR>
 map <C-W> :w<CR> :bd<CR> :q<CR>
+command P :set paste! paste?
 " Toggle line numbers
 nnoremap <F6> :set number!<CR>
 " Toggle search highlights and show current value
