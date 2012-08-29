@@ -21,7 +21,9 @@ syntax on
 " Switch between buffers
 map <C-right> :bn<CR>
 map <C-left> :bp<CR>
+" Close at once
 map <C-W> :w<CR> :bd<CR> :q<CR>
+" Toggle paste mode
 command P :set paste! paste?
 " Toggle line numbers
 nnoremap <F6> :set number!<CR>
@@ -47,6 +49,7 @@ au filetype python map <F7> :w<CR> :!clear<CR> :!python2 -m doctest -v %<CR>
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/colors/kivy.vim
 
+" Colorscheme and filetype settings
 colorscheme navajo-night
 filetype plugin on
 filetype on
@@ -54,8 +57,10 @@ filetype indent on
 
 " Keep PyComplexity always on
 let g:complexity_always_on = 1
+" Change the leader key
 let mapleader = ','
 
+" General settings
 set hls
 set hid
 set expandtab
