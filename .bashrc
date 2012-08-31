@@ -5,7 +5,7 @@ alias pacman='pacman-color'
 alias upd='sudo pacman -Syy && sudo pacman -Syu'
 alias orph='sudo pacman -R $(pacman -Qtdq)'
 alias cacheclean='sudo cacheclean -v 1'
-alias svim='HOME=/home/miki && sudo vim -u $HOME/.vimrc'
+alias svim='HOME=/home/miki && sudoedit'
 
 export EDITOR='vim'
 export PATH=$PATH:~/android-sdk-linux/tools
