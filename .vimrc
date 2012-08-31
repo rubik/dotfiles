@@ -21,6 +21,11 @@ syntax on
 " Switch between buffers
 map <C-right> :bn<CR>
 map <C-left> :bp<CR>
+" Improve windows switching
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 " Close at once
 map <C-W> :w<CR> :bd<CR> :q<CR>
 " Toggle paste mode
@@ -57,6 +62,8 @@ filetype indent on
 
 " Keep PyComplexity always on
 let g:complexity_always_on = 1
+" Set PEP8 checker mapping
+let g:pep8_map = '<F11>'
 " Change the leader key
 let mapleader = ','
 
