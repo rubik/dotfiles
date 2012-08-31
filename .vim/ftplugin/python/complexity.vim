@@ -314,4 +314,4 @@ if exists("g:complexity_always_on") && g:complexity_always_on
     call s:ShowComplexity()
 endif
 
-command! Compl  call s:ToggleComplexity()
+command! Complexity  call s:ToggleComplexity()
