@@ -35,7 +35,7 @@ URxvt.shading: 23
 URxvt.scrollBar: false
 
 ! Adjust the geometry
-URxvt.geometry: 100x30
+URxvt.geometry: 100x33
 
 ! Remove borders
 URxvt.borderLess: true
