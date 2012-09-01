@@ -7,6 +7,7 @@ alias orph='sudo pacman -R $(pacman -Qtdq)'
 alias cacheclean='sudo cacheclean -v 1'
 alias svim='HOME=/home/miki && sudoedit'
 
+export TERM='rxvt-unicode'
 export EDITOR='vim'
 export PATH=$PATH:~/android-sdk-linux/tools
 export PATH=$PATH:~/android-sdk-linux/platform-tools

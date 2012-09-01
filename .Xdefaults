@@ -1,0 +1,53 @@
+! to match gnome-terminal "Linux console" scheme
+! foreground/background
+URxvt*background: #002B36
+URxvt*foreground: #839496
+! black
+URxvt.color0  : #000000
+URxvt.color8  : #555555
+! red
+URxvt.color1  : #DC322F
+URxvt.color9  : #DC322F
+! green
+URxvt.color2  : #55FF55
+URxvt.color10 : #55FF55
+! yellow
+URxvt.color3  : #B58900
+URxvt.color11 : #B58900
+! blue
+URxvt.color4  : #268BD2
+URxvt.color12 : #5555FF
+! magenta
+URxvt.color5  : #D33682
+URxvt.color13 : #FF55FF
+! cyan
+URxvt.color6  : #2AA198
+URxvt.color14 : #55FFFF
+! white
+URxvt.color7  : #AAAAAA
+URxvt.color15 : #EEE8D5
+
+! Native transparency
+URxvt.transparent: true
+URxvt.shading: 23
+
+! Adjust the scrollbar
+URxvt.scrollBar: false
+
+! Adjust the geometry
+URxvt.geometry: 100x30
+
+! Remove borders
+URxvt.borderLess: true
+
+! Font and letter spacing
+! I want antialiasing!!
+URxvt*font: xft:Monospace:pixelsize=13:antialias=true
+URxvt*letterSpace: -1
+
+! Perl extensions
+URxvt.perl-ext-common : default,matcher,tabbed
+URxvt.urlLauncher     : /usr/bin/chromium
+URxvt.matcher.button  : 1
+! Fullscreen switch
+URxvt.keysym.F11:  perl:fullscreen:switch
