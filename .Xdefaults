@@ -1,7 +1,13 @@
-! to match gnome-terminal "Linux console" scheme
+! Make Ctrl-Arrows works in Vim
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+
+! to match Konsole "Solarized" scheme
 ! foreground/background
-URxvt*background: #002B36
-URxvt*foreground: #839496
+URxvt.background: #002B36
+URxvt.foreground: #839496
 ! black
 URxvt.color0  : #000000
 URxvt.color8  : #555555
@@ -31,6 +37,9 @@ URxvt.color15 : #EEE8D5
 URxvt.transparent: true
 URxvt.shading: 23
 
+! Set the icon
+URxvt.iconFile: /usr/share/icons/clarity-dark_canus/scalable/apps/terminal.svg
+
 ! Adjust the scrollbar
 URxvt.scrollBar: false
 
@@ -42,8 +51,8 @@ URxvt.borderLess: false
 
 ! Font and letter spacing
 ! I want antialiasing!!
-URxvt*font: xft:Monospace:pixelsize=13:antialias=true
-URxvt*letterSpace: -1
+URxvt.font: xft:Monospace:pixelsize=13:antialias=true
+URxvt.letterSpace: -1
 
 ! Perl extensions
 URxvt.perl-ext-common : default,matcher,tabbed,fullscreen
