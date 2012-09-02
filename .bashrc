@@ -1,6 +1,7 @@
 alias ls='ls --color=always'
 alias la='ls -a'
 alias grep='grep --color=always'
+alias less='less -R'
 alias pacman='pacman-color'
 alias upd='sudo pacman -Syy && sudo pacman -Syu'
 alias orph='sudo pacman -R $(pacman -Qtdq)'
@@ -11,6 +12,7 @@ export TERM='rxvt-unicode'
 export EDITOR='vim'
 export PATH=$PATH:~/android-sdk-linux/tools
 export PATH=$PATH:~/android-sdk-linux/platform-tools
+
 android-proj() {
   # Create a new Android project
   # ----------------------------
