@@ -37,8 +37,8 @@ URxvt.scrollBar: false
 ! Adjust the geometry
 URxvt.geometry: 100x33
 
-! Remove borders
-URxvt.borderLess: true
+! Keep borders
+URxvt.borderLess: false
 
 ! Font and letter spacing
 ! I want antialiasing!!
@@ -46,7 +46,7 @@ URxvt*font: xft:Monospace:pixelsize=13:antialias=true
 URxvt*letterSpace: -1
 
 ! Perl extensions
-URxvt.perl-ext-common : default,matcher,tabbed
+URxvt.perl-ext-common : default,matcher,tabbed,fullscreen
 URxvt.urlLauncher     : /usr/bin/chromium
 URxvt.matcher.button  : 1
 ! Fullscreen switch
