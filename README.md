@@ -24,7 +24,7 @@ Other dotfiles are from
 
 ## Default configuration
 
-The default configuration looks like this (desktop screenshot):
+The default configuration looks like this:
 
 [![Desktop screenshot free](http://i50.tinypic.com/e6c1o8.png)](http://i47.tinypic.com/2eat8xd.png)
 [![Desktop screenshot cluttered](http://i48.tinypic.com/w0lruu.png)](http://i45.tinypic.com/3142i2w.png)
