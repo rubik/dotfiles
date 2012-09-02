@@ -55,6 +55,7 @@ au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/colors/kivy.vim
 
 " Colorscheme and filetype settings
+set background=dark
 colorscheme navajo-night
 filetype plugin on
 filetype on
