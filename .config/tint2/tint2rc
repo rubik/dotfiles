@@ -120,7 +120,7 @@ battery_background_id = 0
 launcher_padding = 1 1 1
 launcher_background_id = 1
 launcher_icon_size = 40
-launcher_item_app = /usr/share/applications/kde4/konsole.desktop
+launcher_item_app = /usr/share/applications/urxvt.desktop
 launcher_item_app = /usr/share/applications/chromium.desktop
 launcher_item_app = /usr/share/applications/thunar.desktop
 
