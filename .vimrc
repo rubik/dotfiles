@@ -34,6 +34,8 @@ command P :set paste! paste?
 nnoremap <F6> :set number!<CR>
 " Toggle search highlights and show current value
 noremap <F4> :set hlsearch! hlsearch?<CR>
+" Copy selected text to clipboard via xclip
+vnoremap <F8> :w !xclip -selection c<CR><ESC>
 
 " ###########################################################################
 " Python mappings.
