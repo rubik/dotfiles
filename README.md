@@ -29,4 +29,4 @@ The default configuration looks like this (desktop screenshot):
 [![Desktop screenshot free](http://i50.tinypic.com/e6c1o8.png)](http://i47.tinypic.com/2eat8xd.png)
 [![Desktop screenshot cluttered](http://i48.tinypic.com/w0lruu.png)](http://i45.tinypic.com/3142i2w.png)
 [![URxvt fullscreen](http://i49.tinypic.com/28lrmkp.png)](http://i49.tinypic.com/1znu72c.png)
-[![Vim fullscreen](http://i45.tinypic.com/24m9u89.png)](http://i48.tinypic.com/35d6fdv.png)
+[![Vim fullscreen](http://i45.tinypic.com/24m9u89.png)](http://i48.tinypic.com/35d6fdy.png)
