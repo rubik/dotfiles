@@ -76,7 +76,7 @@ cb() {
 # Aliases / functions leveraging the cb() function
 # ------------------------------------------------
 # Copy contents of a file
-alias cbf="cat "$1" | cb"
+function cbf() { cat $1 | cb; }
 # Copy SSH public key
 alias cbssh="cb ~/.ssh/id_rsa.pub"  
 # Copy current working directory
