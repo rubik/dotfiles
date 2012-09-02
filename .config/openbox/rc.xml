@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>MintZ</name>
+    <name>Atolm</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -337,9 +337,9 @@
       </action>
     </keybind>
     <keybind key="C-S-a">
-        <action name="Execute">
-            <command>gksudo halt</command>
-        </action>
+      <action name="Execute">
+        <command>gksudo halt</command>
+      </action>
     </keybind>
     <keybind key="C-l">
       <action name="Exit">
