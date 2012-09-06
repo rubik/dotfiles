@@ -19,15 +19,8 @@ syntax on
 " ##########################################################################
 " Mappings.
 " Switch between buffers
-map <C-right> :bn<CR>
-map <C-left> :bp<CR>
-" Improve windows switching
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-" Close at once
-map <C-W> :w<CR> :bd<CR> :q<CR>
+map <C-Right> :bn<CR>
+map <C-Left> :bp<CR>
 " Toggle paste mode
 command P :set paste! paste?
 " Toggle line numbers
