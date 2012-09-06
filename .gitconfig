@@ -1,0 +1,9 @@
+[user]
+	email = michelelacchia@gmail.com
+	name = Michele Lacchia
+[credential]
+	helper = cache --timeout=3600
+[format]
+	pretty = oneline
+[color]
+	ui = true
