@@ -7,11 +7,19 @@ alias upd='sudo pacman -Syy && sudo pacman -Syu'
 alias orph='sudo pacman -R $(pacman -Qtdq)'
 alias cacheclean='sudo cacheclean -v 1'
 alias svim='HOME=/home/miki && sudoedit'
+# I don't want virtualenvwrapper, I want a simple a!!
+alias a='source bin/activate'
 
 export TERM='rxvt-unicode'
 export EDITOR='vim'
 export PATH=$PATH:~/android-sdk-linux/tools
 export PATH=$PATH:~/android-sdk-linux/platform-tools
+
+# Python For Android
+export ANDROIDSDK=$HOME/android-sdk-linux
+export ANDROIDNDK=$HOME/android-ndk-r8b
+export ANDROIDNDKVER=r7
+export ANDROIDAPI=14
 
 android-proj() {
   # Create a new Android project
