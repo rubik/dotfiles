@@ -46,7 +46,7 @@
         </item>
         <item label="Shutdown">
             <action name="Execute">
-                <execute>gksudo halt</execute>
+                <execute>gksudo poweroff</execute>
             </action>
         </item>
 	</menu>

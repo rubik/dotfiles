@@ -14,6 +14,9 @@ runtime! archlinux.vim
 " Or better yet, read /usr/share/vim/vim72/vimrc_example.vim or the vim manual
 " and configure vim to your own liking!
 
+" Load Pathogen
+call pathogen#infect()
+
 syntax on
 
 " ##########################################################################
@@ -49,6 +52,16 @@ au filetype python map <F7> :w<CR> :!clear<CR> :!python2 -m doctest -v %<CR>
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/colors/kivy.vim
 
+" Django: map set htmldjango filetype for every html file
+au BufRead,BufNewFile *.html set filetype=htmldjango
+au! Syntax htmldjango source $HOME/.vim/syntax/htmldjango.vim
+" Closetag.vim
+au Filetype htmldjango,xml,xsl source $HOME/.vim/scripts/closetag.vim
+iabbrev </ <C-_>
+" Local settings
+autocmd FileType htmldjango,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango source $HOME/.vim/bundle/zencoding/plugin/zencoding.vim
+
 " Colorscheme and filetype settings
 set background=dark
 colorscheme navajo-night
@@ -56,10 +69,15 @@ filetype plugin on
 filetype on
 filetype indent on
 
+" Automatically remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Keep PyComplexity always on
 let g:complexity_always_on = 1
 " Set PEP8 checker mapping
 let g:pep8_map = '<F11>'
+" Tell Jedi that we use buffers
+let g:jedi#use_tabs_not_buffers = 0
 " Change the leader key
 let mapleader = ','
 

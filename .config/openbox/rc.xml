@@ -338,7 +338,7 @@
     </keybind>
     <keybind key="C-S-a">
       <action name="Execute">
-        <command>gksudo halt</command>
+        <command>gksudo poweroff</command>
       </action>
     </keybind>
     <keybind key="C-l">

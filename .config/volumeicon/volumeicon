@@ -7,13 +7,10 @@ show_sound_level=false
 onclick=xterm -e 'alsamixer'
 theme=Default
 
-[Hotkeys]
-up_enabled=true
-down_enabled=true
-mute_enabled=true
-up=XF86AudioRaiseVolume
-down=XF86AudioLowerVolume
-mute=XF86AudioMute
+/*[Hotkeys]*/
+/*up_enabled=true*/
+/*down_enabled=true*/
+/*mute_enabled=true*/
 
 [Alsa]
 card=default

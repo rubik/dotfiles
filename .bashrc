@@ -8,13 +8,13 @@ alias upd='sudo pacman -Syy && sudo pacman -Syu'
 alias orph='sudo pacman -R $(pacman -Qtdq)'
 alias cacheclean='sudo cacheclean -v 1'
 alias svim='HOME=/home/miki && sudoedit'
-# I don't want virtualenvwrapper, I want a simple a!!
-alias a='source bin/activate'
 
 export TERM='rxvt-unicode'
 export EDITOR='vim'
 export PATH=$PATH:~/android-sdk-linux/tools
 export PATH=$PATH:~/android-sdk-linux/platform-tools
+# Ruby gems
+export PATH=$PATH:~/.gem/ruby/2.0.0/bin
 
 # Python For Android
 export ANDROIDSDK=$HOME/android-sdk-linux
@@ -36,6 +36,23 @@ android-proj() {
   android create project --target $target --name $name \
       --path $workspace/$name --activity MainActivity \
       --package com.mine.${name,,}
+}
+
+# Yooo virtualenvs
+# I don't want virtualenvwrapper, I want a simple a!!
+function a() {
+    # If an argument is not supplied, current wd is assumed.
+    local _dir=$(pwd)
+    dir=${1-$_dir}
+    cd $dir
+    source bin/activate
+    cd $_dir
+}
+
+function proj(){
+    django-admin.py startproject \
+        --template=https://github.com/lincolnloop/django-layout/zipball/master \
+        --extension=py,rst,gitignore,example $1
 }
 
 # Bash prompt
@@ -89,11 +106,11 @@ cb() {
 # Copy contents of a file
 function cbf() { cat $1 | cb; }
 # Copy SSH public key
-alias cbssh="cb ~/.ssh/id_rsa.pub"  
+alias cbssh="cat ~/.ssh/id_rsa.pub | cb"
 # Copy current working directory
-alias cbwd="pwd | cb"  
+alias cbwd="pwd | cb"
 # Copy most recent command in bash history
-alias cbhs="cat $HISTFILE | tail -n 1 | cb" 
+alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 
 # Sudo TAB completion
 complete -cf sudo
