@@ -3,7 +3,6 @@ alias la='ls -a'
 alias grep='grep --color=always'
 alias less='less -R'
 alias tree='tree -C'
-alias pacman='pacman-color'
 alias upd='sudo pacman -Syy && sudo pacman -Syu'
 alias orph='sudo pacman -R $(pacman -Qtdq)'
 alias cacheclean='sudo cacheclean -v 1'
@@ -15,6 +14,9 @@ export PATH=$PATH:~/android-sdk-linux/tools
 export PATH=$PATH:~/android-sdk-linux/platform-tools
 # Ruby gems
 export PATH=$PATH:~/.gem/ruby/2.0.0/bin
+export PATH=$PATH:/root/.gem/ruby/2.0.0/bin
+# Google App Engine
+export PATH=$PATH:~/google_appengine
 
 # Python For Android
 export ANDROIDSDK=$HOME/android-sdk-linux
