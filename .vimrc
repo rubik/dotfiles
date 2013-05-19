@@ -6,6 +6,8 @@
 " make changes after sourcing archlinux.vim since it alters the value of the
 " 'compatible' option.
 
+set nocompatible
+
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages.
 runtime! archlinux.vim
@@ -15,7 +17,7 @@ runtime! archlinux.vim
 " and configure vim to your own liking!
 
 " Load Pathogen
-call pathogen#infect()
+execute pathogen#infect()
 
 syntax on
 
@@ -60,11 +62,11 @@ au Filetype htmldjango,xml,xsl source $HOME/.vim/scripts/closetag.vim
 iabbrev </ <C-_>
 " Local settings
 autocmd FileType htmldjango,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango source $HOME/.vim/bundle/zencoding/plugin/zencoding.vim
 
 " Colorscheme and filetype settings
 set background=dark
-colorscheme navajo-night
+" colorscheme navajo-night
+colorscheme solarized
 filetype plugin on
 filetype on
 filetype indent on
@@ -80,6 +82,9 @@ let g:pep8_map = '<F11>'
 let g:jedi#use_tabs_not_buffers = 0
 " Change the leader key
 let mapleader = ','
+
+" vim-powerline
+set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 
 " General settings
 set hls
