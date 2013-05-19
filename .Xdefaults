@@ -6,32 +6,68 @@ URxvt.keysym.Control-Right: \033[1;5C
 
 ! to match Konsole "Solarized" scheme
 ! foreground/background
-URxvt.background: #002B36
-URxvt.foreground: #839496
-! black
-URxvt.color0  : #000000
-URxvt.color8  : #555555
-! red
-URxvt.color1  : #DC322F
-URxvt.color9  : #DC322F
-! green
-URxvt.color2  : #55FF55
-URxvt.color10 : #55FF55
-! yellow
-URxvt.color3  : #B58900
-URxvt.color11 : #B58900
-! blue
-URxvt.color4  : #268BD2
-URxvt.color12 : #5555FF
-! magenta
-URxvt.color5  : #D33682
-URxvt.color13 : #FF55FF
-! cyan
-URxvt.color6  : #2AA198
-URxvt.color14 : #55FFFF
-! white
-URxvt.color7  : #AAAAAA
-URxvt.color15 : #EEE8D5
+!URxvt.background: #002B36
+!URxvt.foreground: #839496
+!! black
+!URxvt.color0  : #000000
+!URxvt.color8  : #555555
+!! red
+!URxvt.color1  : #DC322F
+!URxvt.color9  : #DC322F
+!! green
+!URxvt.color2  : #55FF55
+!URxvt.color10 : #55FF55
+!! yellow
+!URxvt.color3  : #B58900
+!URxvt.color11 : #B58900
+!! blue
+!URxvt.color4  : #268BD2
+!URxvt.color12 : #5555FF
+!! magenta
+!URxvt.color5  : #D33682
+!URxvt.color13 : #FF55FF
+!! cyan
+!URxvt.color6  : #2AA198
+!URxvt.color14 : #55FFFF
+!! white
+!URxvt.color7  : #AAAAAA
+!URxvt.color15 : #3EE8D5
+
+*background: #002b36
+*foreground: #657b83
+*cursorColor: #93a1a1
+
+!! black dark/light
+*color0: #073642
+*color8: #002b36
+
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e
 
 ! Native transparency
 URxvt.transparent: true
@@ -51,12 +87,14 @@ URxvt.borderLess: false
 
 ! Font and letter spacing
 ! I want antialiasing!!
-URxvt.font: xft:Monospace:pixelsize=13:antialias=true
-URxvt.letterSpace: -1
+! URxvt.font: xft:Monospace:pixelsize=13:antialias=true
+URxvt.font: xft:MesloLGM:pixelsize=12:antialias=true
+URxvt.letterSpace: -0.5
 
 ! Perl extensions
 URxvt.perl-ext-common : default,matcher,tabbed,fullscreen
 URxvt.urlLauncher     : /usr/bin/chromium
 URxvt.matcher.button  : 1
+
 ! Fullscreen switch
 URxvt.keysym.F11:  perl:fullscreen:switch
