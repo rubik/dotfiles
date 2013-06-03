@@ -74,13 +74,13 @@ URxvt.transparent: true
 URxvt.shading: 23
 
 ! Set the icon
-URxvt.iconFile: /usr/share/icons/clarity-dark_canus/scalable/apps/terminal.svg
+URxvt.iconFile: /usr/share/icons/gnome/256x256/apps/terminal.png
 
 ! Adjust the scrollbar
 URxvt.scrollBar: false
 
 ! Adjust the geometry
-URxvt.geometry: 100x33
+URxvt.geometry: 93x27
 
 ! Keep borders
 URxvt.borderLess: false
@@ -88,8 +88,8 @@ URxvt.borderLess: false
 ! Font and letter spacing
 ! I want antialiasing!!
 ! URxvt.font: xft:Monospace:pixelsize=13:antialias=true
-URxvt.font: xft:MesloLGM:pixelsize=12:antialias=true
-URxvt.letterSpace: -0.5
+URxvt.font: xft:MesloLGM:pixelsize=13:antialias=true
+URxvt.letterSpace: -1.5
 
 ! Perl extensions
 URxvt.perl-ext-common : default,matcher,tabbed,fullscreen

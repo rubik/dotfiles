@@ -16,6 +16,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'mattn/zencoding-vim'
 Bundle 'Command-T'
 Bundle 'skammer/vim-css-color'
