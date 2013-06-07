@@ -331,16 +331,6 @@
         <command>thunar</command>
       </action>
     </keybind>
-    <keybind key="C-S-s">
-      <action name="Execute">
-        <command>gksudo pm-suspend</command>
-      </action>
-    </keybind>
-    <keybind key="C-S-a">
-      <action name="Execute">
-        <command>gksudo poweroff</command>
-      </action>
-    </keybind>
     <keybind key="C-l">
       <action name="Exit">
         <prompt>yes</prompt>
@@ -722,7 +712,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>
