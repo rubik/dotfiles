@@ -59,6 +59,6 @@ ${else}${if_up enp2s0}${voffset -12}
 ${goto 92}${color2}Down${color0}${goto 172}${downspeedf enp2s0}     ${color2}Total: ${color0}${totaldown enp2s0}
 ${goto 92}${color2}Up${color0}${goto 172}${upspeedf enp2s0}     ${color2}Total: ${color0}${totalup enp2s0}
 ${endif}${endif}${voffset -12}
-${goto 92}${color2}Local IP${color0}${goto 172}${texeci 300 hostname -i}
+${goto 92}${color2}Local IP${color0}${goto 172}${texeci 900 hostname -i}
 #${image ~/.conkytheme/base.png -p 10,0 -s 339x86}
 ${image ~/.conkytheme/wlan100.png -p 32,20 -s 45x45}
