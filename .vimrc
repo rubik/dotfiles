@@ -21,6 +21,8 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'Command-T'
 Bundle 'skammer/vim-css-color'
 Bundle 'groenewege/vim-less'
+Bundle 'closetag.vim'
+Bundle 'django.vim'
 
 filetype on
 filetype plugin indent on
@@ -73,9 +75,8 @@ au! Syntax kivy source $HOME/.vim/colors/kivy.vim
 
 " Django: map set htmldjango filetype for every html file
 au BufRead,BufNewFile *.html set filetype=htmldjango
-au! Syntax htmldjango source $HOME/.vim/syntax/htmldjango.vim
 " Closetag.vim
-au Filetype htmldjango,xml,xsl source $HOME/.vim/scripts/closetag.vim
+au Filetype htmldjango,xml,xsl source $HOME/.vim/bundle/closetag.vim/plugin/closetag.vim
 iabbrev </ <C-_>
 " Local settings
 autocmd FileType htmldjango,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
