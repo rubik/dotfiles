@@ -18,11 +18,12 @@
 
 feh --bg-scale ~/Documents/Backgrounds/archlinux.png &
 setxkbmap it &
-tint2 -c ~/.config/tint2/tint2rc &
-volumeicon &
+#tint2 -c ~/.config/tint2/tint2rc &
+pypanel &
 conky -c ~/.conky/conkyrc_cpu &
 conky -c ~/.conky/conkyrc_memory &
 conky -c ~/.conky/conkyrc_network &
 conky -c ~/.conky/conkyrc_system &
 conky -c ~/.conky/conkyrc_clock &
+volumeicon &
 thunar --daemon &

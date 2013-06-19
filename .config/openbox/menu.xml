@@ -25,9 +25,9 @@
 				<execute>chromium</execute>
 			</action>
 		</item>
-		<item label="Dolphin">
+		<item label="Thunar">
 			<action name="Execute">
-				<execute>dolphin</execute>
+				<execute>thunar</execute>
 			</action>
 		</item>
 		<menu id="apps-office-menu"/>
@@ -37,8 +37,8 @@
         <item label="Suspend">
             <action name="Execute">
                 <execute>gksudo pm-suspend</execute>
-            </action> 
-        </item> 
+            </action>
+        </item>
 		<item label="Reboot">
 			<action name="Execute">
 				<execute>gksudo reboot</execute>
