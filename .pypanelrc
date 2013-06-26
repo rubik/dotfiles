@@ -133,7 +133,7 @@ APPICONS        = 1             # Show application icons
 AUTOHIDE        = 0             # Autohide uses the CLOCK_DELAY timer above
 SHADOWS         = 0             # Show text shadows
 SHOWLINES       = 0             # Show object seperation lines
-SHOWBORDER      = 0             # Show a border around the panel
+SHOWBORDER      = 1             # Show a border around the panel
 
 #------------------------------------------------------------------------------
 # Desktop Names: Configure the names of your desktops
