@@ -23,6 +23,7 @@ Bundle 'skammer/vim-css-color'
 Bundle 'groenewege/vim-less'
 Bundle 'closetag.vim'
 Bundle 'django.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype on
 filetype plugin indent on
@@ -98,6 +99,7 @@ let mapleader = ','
 set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 
 " General settings
+set number
 set hlsearch
 set hidden
 set expandtab
