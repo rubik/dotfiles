@@ -11,8 +11,8 @@ alias svim='HOME=/home/miki && sudoedit'
 
 export TERM='rxvt-unicode'
 export EDITOR='vim'
-export PATH=$PATH:~/android-sdk-linux/tools
-export PATH=$PATH:~/android-sdk-linux/platform-tools
+export PATH=$PATH:~/adt-bundle/sdk/tools
+export PATH=$PATH:~/adt-bundle/sdk/platform-tools
 # Ruby gems
 export PATH=$PATH:~/.gem/ruby/2.0.0/bin
 export PATH=$PATH:/root/.gem/ruby/2.0.0/bin
@@ -21,11 +21,6 @@ export PATH=$PATH:~/google_appengine
 # Light Table
 export PATH=$PATH:~/LightTable
 
-# Python For Android
-export ANDROIDSDK=$HOME/android-sdk-linux
-export ANDROIDNDK=$HOME/android-ndk-r8b
-export ANDROIDNDKVER=r7
-export ANDROIDAPI=14
 
 android-proj() {
   # Create a new Android project
@@ -38,9 +33,9 @@ android-proj() {
   target=$1
   name=$2
   workspace=${3-$_workspace}
-  android create project --target $target --name $name \
-      --path $workspace/$name --activity MainActivity \
-      --package com.mine.${name,,}
+  android create project --target $target --name "$name" \
+      --path "$workspace/$name" --activity MainActivity \
+      --package "com.mine.${name,,}"
 }
 
 # Yooo virtualenvs

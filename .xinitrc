@@ -5,4 +5,5 @@
 #
 # The following works well with SLiM (dbus-launch allows automounting with
 # gvfs and Gnome PolKit)
+[[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults
 exec dbus-launch openbox-session

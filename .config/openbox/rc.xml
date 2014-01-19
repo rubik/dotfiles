@@ -767,5 +767,17 @@
 
   # end of the example
 -->
+    <application name="urxvt-bg">
+      <decor>no</decor>
+      <focus>yes</focus>
+      <position>
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <layer>below</layer>
+      <desktop>all</desktop>
+      <maximized>yes</maximized>
+      <skip_taskbar>yes</skip_taskbar>
+    </application>
   </applications>
 </openbox_config>

@@ -24,6 +24,10 @@ Bundle 'groenewege/vim-less'
 Bundle 'closetag.vim'
 Bundle 'django.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'guersam/vim-j'
+Bundle 'endel/vim-github-colorscheme'
+Bundle 'Rykka/riv.vim'
+Bundle 'mustache/vim-mustache-handlebars'
 
 filetype on
 filetype plugin indent on
@@ -70,17 +74,20 @@ imap <C-y>o <CR><Up><End><CR>
 "au filetype python map <F7> :w<CR> :!clear<CR> :!python2 -m doctest -v %<CR>
 
 
+" Filetype-specific settings
 " Add colorscheme for Kivy files
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/colors/kivy.vim
 
-" Django: map set htmldjango filetype for every html file
-au BufRead,BufNewFile *.html set filetype=htmldjango
+" HTML: map set htmldjango filetype for every html file
+au BufRead,BufNewFile *.html set filetype=html syntax=mustache
 " Closetag.vim
-au Filetype htmldjango,xml,xsl source $HOME/.vim/bundle/closetag.vim/plugin/closetag.vim
+au Filetype html,htmldjango,xml,xsl source $HOME/.vim/bundle/closetag.vim/plugin/closetag.vim
 iabbrev </ <C-_>
 " Local settings
-autocmd FileType htmldjango,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,htmldjango,xml,javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" reST setttings
+au Filetype rst set nofoldenable
 
 " Colorscheme and filetype settings
 set background=dark
@@ -90,6 +97,8 @@ colorscheme solarized
 " Automatically remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Activate Mustache abbreviations
+let g:mustache_abbreviations = 1
 " Keep PyComplexity always on
 let g:complexity_always_on = 1
 " Change the leader key

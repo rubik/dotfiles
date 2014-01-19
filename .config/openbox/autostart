@@ -20,6 +20,7 @@ feh --bg-scale ~/Documents/Backgrounds/archlinux.png &
 setxkbmap it &
 #tint2 -c ~/.config/tint2/tint2rc &
 pypanel &
+urxvt -name "urxvt-bg" &
 conky -c ~/.conky/conkyrc_cpu &
 conky -c ~/.conky/conkyrc_memory &
 conky -c ~/.conky/conkyrc_network &
