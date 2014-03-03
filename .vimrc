@@ -28,6 +28,7 @@ Bundle 'guersam/vim-j'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'Rykka/riv.vim'
 Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'rubik/vim-dg'
 
 filetype on
 filetype plugin indent on
@@ -77,7 +78,7 @@ imap <C-y>o <CR><Up><End><CR>
 " Filetype-specific settings
 " Add colorscheme for Kivy files
 au BufRead,BufNewFile *.kv set filetype=kivy
-au! Syntax kivy source $HOME/.vim/colors/kivy.vim
+au! Syntax kivy source $HOME/.vim/syntax/kivy.vim
 
 " HTML: map set htmldjango filetype for every html file
 au BufRead,BufNewFile *.html set filetype=html syntax=mustache
@@ -85,9 +86,7 @@ au BufRead,BufNewFile *.html set filetype=html syntax=mustache
 au Filetype html,htmldjango,xml,xsl source $HOME/.vim/bundle/closetag.vim/plugin/closetag.vim
 iabbrev </ <C-_>
 " Local settings
-autocmd FileType html,htmldjango,xml,javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-" reST setttings
-au Filetype rst set nofoldenable
+autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Colorscheme and filetype settings
 set background=dark
@@ -98,7 +97,7 @@ colorscheme solarized
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Activate Mustache abbreviations
-let g:mustache_abbreviations = 1
+" let g:mustache_abbreviations = 1
 " Keep PyComplexity always on
 let g:complexity_always_on = 1
 " Change the leader key
@@ -116,9 +115,10 @@ set textwidth=79
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set smartcase
+set ignorecase
 set autoindent
 set colorcolumn=+1
+set nofoldenable
 highlight ColorColumn ctermbg=lightcyan
 
 set history=1000

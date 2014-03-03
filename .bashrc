@@ -8,6 +8,7 @@ alias upd='sudo pacman -Syy && sudo pacman -Syu'
 alias orph='sudo pacman -R $(pacman -Qtdq)'
 alias cacheclean='sudo cacheclean -v 1'
 alias svim='HOME=/home/miki && sudoedit'
+alias dg='python -m dg'
 
 export TERM='rxvt-unicode'
 export EDITOR='vim'
@@ -20,6 +21,8 @@ export PATH=$PATH:/root/.gem/ruby/2.0.0/bin
 export PATH=$PATH:~/google_appengine
 # Light Table
 export PATH=$PATH:~/LightTable
+# dg
+export PYTHONPATH=$PYTHONPATH:~/dg
 
 
 android-proj() {
