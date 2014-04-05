@@ -29,6 +29,7 @@ Bundle 'endel/vim-github-colorscheme'
 Bundle 'Rykka/riv.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'rubik/vim-dg'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype on
 filetype plugin indent on
@@ -131,3 +132,5 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
 set pastetoggle=<F2>
+
+let g:dg_highlight_builtins = 0
