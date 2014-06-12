@@ -55,7 +55,7 @@ TEXT
 ${voffset -12}
 ${goto 92}${color2}Kernel  ${goto 170}${color0}${sysname} ${color2}${kernel} ${color0}${machine}
 ${goto 92}${color2}Uptime  ${goto 170}${color0}${uptime}
-${goto 92}${color2}CPU 0 Temp: ${goto 170}${color0}${execi 30 sensors | grep 'temp1' | cut -c16,17} C
-${goto 92}${color2}CPU 1 Temp: ${goto 170}${color0}${execi 30 sensors | grep 'temp2' | cut -c16,17} C
+${goto 92}${color2}CPU temp: ${goto 170}${color0}${execi 60 sensors | grep "Core 0" | awk '{print $3}'}${color2} | ${color0}${execi 60 sensors | grep "Core 1" | awk '{print $3}'}
+${goto 92}${color2}Battery temp: ${goto 170}${color0}+${execi 60 acpi -t | head -n1 | awk '{print $4}'}°C${color2} | ${color0}+${execi 60 acpi -t | tail -n1 | awk '{print $4}'}°C
 #${image ~/.conkytheme/base.png -p 10,0 -s 339x86}
 ${image ~/.conkytheme/archlinux_light.png -p 28,16 -s 54x54}
