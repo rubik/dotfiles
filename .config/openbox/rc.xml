@@ -328,7 +328,7 @@
     </keybind>
     <keybind key="C-S-p">
       <action name="Execute">
-        <command>thunar</command>
+        <command>pcmanfm</command>
       </action>
     </keybind>
     <keybind key="C-l">

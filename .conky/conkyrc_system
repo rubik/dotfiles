@@ -2,7 +2,7 @@
 # - Conky settings - #
 ######################
 background yes
-update_interval .25
+update_interval 2.5
 total_run_times 0
 net_avg_samples 1
 cpu_avg_samples 1
