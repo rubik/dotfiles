@@ -30,8 +30,8 @@ URxvt.borderLess: false
 ! Font and letter spacing
 ! I want antialiasing!!
 ! URxvt.font: xft:Monospace:pixelsize=13:antialias=true
-URxvt.font: xft:MesloLGM:pixelsize=13:antialias=true
-URxvt.letterSpace: -1.5
+URxvt.font: xft:Meslo LG M for Powerline:pixelsize=11:antialias=false
+URxvt.letterSpace: -1
 
 ! Perl extensions
 URxvt.perl-ext-common : default,matcher,tabbed,fullscreen

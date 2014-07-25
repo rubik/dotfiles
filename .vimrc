@@ -1,3 +1,4 @@
+filetype off
 " All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
 " /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
 " you can find below.  If you wish to change any of those settings, you should
@@ -9,27 +10,32 @@
 set nocompatible
 filetype off
 
-set rtp+=$HOME/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage itself
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" My Bundles
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'mattn/zencoding-vim'
-Bundle 'Command-T'
-Bundle 'skammer/vim-css-color'
-Bundle 'groenewege/vim-less'
-Bundle 'closetag.vim'
-Bundle 'django.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'guersam/vim-j'
-Bundle 'endel/vim-github-colorscheme'
-Bundle 'Rykka/riv.vim'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'rubik/vim-dg'
-Bundle 'scrooloose/nerdcommenter'
+" My Plugins
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'mattn/emmet-vim'
+Plugin 'Command-T'
+Plugin 'skammer/vim-css-color'
+Plugin 'groenewege/vim-less'
+Plugin 'closetag.vim'
+Plugin 'django.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'guersam/vim-j'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'Rykka/riv.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'rubik/vim-dg'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'dag/vim2hs'
+Plugin 'scrooloose/syntastic'
+
+call vundle#end()
 
 filetype on
 filetype plugin indent on
@@ -38,11 +44,9 @@ filetype plugin indent on
 " properly set to work with the Vim-related packages.
 runtime! archlinux.vim
 
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim72/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
+let $PATH = $PATH . ':' . expand('~/.cabal/bin')
 
-syntax on
+syntax enable
 
 " ##########################################################################
 " Mappings.
@@ -88,10 +92,10 @@ au Filetype html,htmldjango,xml,xsl source $HOME/.vim/bundle/closetag.vim/plugin
 iabbrev </ <C-_>
 " Local settings
 autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
-" Colorscheme and filetype settings
+" Colorscheme
 set background=dark
-" colorscheme navajo-night
 colorscheme solarized
 
 " Automatically remove trailing whitespace
@@ -101,6 +105,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 " let g:mustache_abbreviations = 1
 " Keep PyComplexity always on
 let g:complexity_always_on = 1
+" Command-T maximum files to scan
+let g:CommandTMaxFiles = 5000
+" Syntastic options
+let g:syntastic_haskell_checkers=['hlint']
 " Change the leader key
 let mapleader = ','
 

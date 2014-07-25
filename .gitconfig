@@ -2,7 +2,7 @@
 	email = michelelacchia@gmail.com
 	name = Michele Lacchia
 [credential]
-	helper = 
+	helper = cache
 [format]
 	pretty = oneline
 [color]
