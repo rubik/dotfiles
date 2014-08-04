@@ -64,6 +64,8 @@ vnoremap <F8> :w !xclip -selection c<CR><ESC>
 " Expand html tags (zencoding-vim)
 map <C-y>o i<CR><Up><End><CR>
 imap <C-y>o <CR><Up><End><CR>
+" Editing a protected file as 'sudo'
+cmap W w !sudo tee % >/dev/null<CR>
 
 " ###########################################################################
 " Python mappings.
@@ -109,6 +111,7 @@ let g:complexity_always_on = 1
 let g:CommandTMaxFiles = 5000
 " Syntastic options
 let g:syntastic_haskell_checkers=['hlint']
+let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
 " Change the leader key
 let mapleader = ','
 
