@@ -2,7 +2,7 @@
 	email = michelelacchia@gmail.com
 	name = Michele Lacchia
 [credential]
-	helper = cache
+	helper = cache --timeout=3600
 [format]
 	pretty = oneline
 [color]
@@ -11,5 +11,6 @@
 	default = simple
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	s = status
 [core]
 	editor = vim
