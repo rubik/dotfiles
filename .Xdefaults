@@ -22,7 +22,7 @@ URxvt.iconFile: /usr/share/icons/gnome/256x256/apps/terminal.png
 URxvt.scrollBar: false
 
 ! Adjust the geometry
-URxvt.geometry: 93x27
+URxvt.geometry: 90x37
 
 ! Keep borders
 URxvt.borderLess: false
