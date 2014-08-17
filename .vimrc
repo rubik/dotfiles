@@ -19,7 +19,6 @@ Plugin 'gmarik/vundle'
 " My Plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mattn/emmet-vim'
-Plugin 'Command-T'
 Plugin 'skammer/vim-css-color'
 Plugin 'groenewege/vim-less'
 Plugin 'closetag.vim'
@@ -34,6 +33,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'dag/vim2hs'
 Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 
@@ -87,6 +88,10 @@ cmap W w !sudo tee % >/dev/null<CR>
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/syntax/kivy.vim
 
+" Custom indent for Cram/Gobble files
+au BufRead,BufNewFile *.t set filetype=gobble
+au Filetype gobble setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 " HTML: map set htmldjango filetype for every html file
 au BufRead,BufNewFile *.html set filetype=html syntax=mustache
 " Closetag.vim
@@ -101,14 +106,17 @@ set background=dark
 colorscheme solarized
 
 " Automatically remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+let blacklist = ['gobble']
+autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//e
 
 " Activate Mustache abbreviations
 " let g:mustache_abbreviations = 1
 " Keep PyComplexity always on
 let g:complexity_always_on = 1
-" Command-T maximum files to scan
-let g:CommandTMaxFiles = 5000
+" ctrlP options
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_working_path_mote = 0
+set wildignore+=*/tmp/*,*.so,*.sw[op],*.zip
 " Syntastic options
 let g:syntastic_haskell_checkers=['hlint']
 let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
@@ -131,6 +139,8 @@ set ignorecase
 set autoindent
 set colorcolumn=+1
 set nofoldenable
+set foldlevelstart=99
+set foldlevel=99
 highlight ColorColumn ctermbg=lightcyan
 
 set history=1000

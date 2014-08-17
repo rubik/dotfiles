@@ -16,7 +16,7 @@
 #
 #xfce-mcs-manager &
 
-feh --bg-scale ~/Documents/Backgrounds/archlinux.png &
+feh --bg-scale ~/Documents/Backgrounds/django-unchained.jpg &
 setxkbmap it &
 #tint2 -c ~/.config/tint2/tint2rc &
 pypanel &
