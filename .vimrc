@@ -35,6 +35,7 @@ Plugin 'dag/vim2hs'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 
@@ -100,14 +101,15 @@ iabbrev </ <C-_>
 " Local settings
 autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4
+" Disable help split
+autocmd FileType help :autocmd BufEnter * wincmd o
 
 " Colorscheme
 set background=dark
 colorscheme solarized
 
 " Automatically remove trailing whitespace
-let blacklist = ['gobble']
-autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Activate Mustache abbreviations
 " let g:mustache_abbreviations = 1
@@ -115,16 +117,17 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//e
 let g:complexity_always_on = 1
 " ctrlP options
 let g:ctrlp_map = '<leader>t'
-let g:ctrlp_working_path_mote = 0
+let g:ctrlp_working_path_mode = 0
 set wildignore+=*/tmp/*,*.so,*.sw[op],*.zip
+" It needs The Silver Searcher
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " Syntastic options
 let g:syntastic_haskell_checkers=['hlint']
 let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
+" Airline options
+set laststatus=2
 " Change the leader key
 let mapleader = ','
-
-" vim-powerline
-set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 
 " General settings
 set number
