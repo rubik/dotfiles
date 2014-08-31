@@ -36,6 +36,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'myusuf3/numbers.vim'
 
 call vundle#end()
 
@@ -57,8 +58,6 @@ map <C-Right> :bn<CR>
 map <C-Left> :bp<CR>
 " Toggle paste mode
 command P :set paste! paste?
-" Toggle line numbers
-nnoremap <F6> :set number!<CR>
 " Toggle search highlights and show current value
 noremap <F4> :set hlsearch! hlsearch?<CR>
 " Copy selected text to clipboard via xclip
