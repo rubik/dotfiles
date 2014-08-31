@@ -28,4 +28,5 @@ conky -c ~/.conky/conkyrc_system &
 conky -c ~/.conky/conkyrc_clock &
 volumeicon &
 vattery &
+rescuetime &
 pcmanfm -d &
