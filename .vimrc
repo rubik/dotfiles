@@ -117,7 +117,7 @@ let g:complexity_always_on = 1
 " ctrlP options
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
-set wildignore+=*/tmp/*,*.so,*.sw[op],*.zip
+set wildignore+=*/tmp/*,*.so,*.sw[op],*.zip,*.pyc
 " It needs The Silver Searcher
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " Syntastic options
