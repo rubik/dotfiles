@@ -66,7 +66,7 @@ vnoremap <F8> :w !xclip -selection c<CR><ESC>
 map <C-y>o i<CR><Up><End><CR>
 imap <C-y>o <CR><Up><End><CR>
 " Editing a protected file as 'sudo'
-cmap W w !sudo tee % >/dev/null<CR>
+cnorea W w !sudo tee % >/dev/null<CR>
 
 " ###########################################################################
 " Python mappings.
@@ -119,7 +119,7 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 set wildignore+=*/tmp/*,*.so,*.sw[op],*.zip,*.pyc
 " It needs The Silver Searcher
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"'
 " Syntastic options
 let g:syntastic_haskell_checkers=['hlint']
 let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
