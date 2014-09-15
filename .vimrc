@@ -21,8 +21,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mattn/emmet-vim'
 Plugin 'skammer/vim-css-color'
 Plugin 'groenewege/vim-less'
-Plugin 'closetag.vim'
-Plugin 'django.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'guersam/vim-j'
 Plugin 'endel/vim-github-colorscheme'
@@ -30,13 +28,14 @@ Plugin 'Rykka/riv.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'rubik/vim-dg'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Shougo/vimproc.vim'
 Plugin 'dag/vim2hs'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'myusuf3/numbers.vim'
+Plugin 'hdima/python-syntax'
+Plugin 'rubik/vim-radon'
 
 call vundle#end()
 
@@ -67,20 +66,9 @@ map <C-y>o i<CR><Up><End><CR>
 imap <C-y>o <CR><Up><End><CR>
 " Editing a protected file as 'sudo'
 cnorea W w !sudo tee % >/dev/null<CR>
-
-" ###########################################################################
-" Python mappings.
-" F2: Open IPython2 and then return VIM
-" F5: Run the current file with IPython2
-" F7: Run current file's doctest with IPython in verbose mode
-"
-" Note that if you do not have an executable called ipython2 in the PATH these
-" commands will not work for you. Also, ipython2, if present will run Python 2
-" version. You should replace ipython2 with the ipython executable you want to
-" use (usually simple ipython or ipython3).
-"au filetype python map <F2> :w<CR> :!clear<CR> :!ipython2<CR>
-"au filetype python map <F5> :w<CR> :!clear<CR> :!ipython2 %<CR>
-"au filetype python map <F7> :w<CR> :!clear<CR> :!python2 -m doctest -v %<CR>
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 
 " Filetype-specific settings
@@ -110,10 +98,11 @@ colorscheme solarized
 " Automatically remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Activate Mustache abbreviations
-" let g:mustache_abbreviations = 1
-" Keep PyComplexity always on
-let g:complexity_always_on = 1
+hi! link pythonPreCondit Include
+hi SignColumn ctermfg=12 guifg=Cyan guibg=Grey
+
+" Keep vim-radon always on
+let g:radon_always_on = 1
 " ctrlP options
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
