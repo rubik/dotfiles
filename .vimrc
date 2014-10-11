@@ -28,7 +28,8 @@ Plugin 'Rykka/riv.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'rubik/vim-dg'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'dag/vim2hs'
+Plugin 'dag/vim-haskell'
+Plugin 'dag/vim-cabal'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
@@ -36,6 +37,7 @@ Plugin 'bling/vim-airline'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'hdima/python-syntax'
 Plugin 'rubik/vim-radon'
+Plugin 'lervag/vim-latex'
 
 call vundle#end()
 
