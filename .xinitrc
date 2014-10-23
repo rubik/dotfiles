@@ -1,9 +1,17 @@
-# If you are not using a display manager then you will have to add consolekit,
-# e.g.:
-#
-#     exec ck-launch-session dbus-launch openbox-session
-#
-# The following works well with SLiM (dbus-launch allows automounting with
-# gvfs and Gnome PolKit)
-[[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults
-exec dbus-launch openbox-session
+#!/bin/sh
+# Configure X
+xsetroot -cursor_name left_ptr &
+setxkbmap it
+xloadimage -onroot Documents/Backgrounds/BetterMan.jpg
+xrdb -merge ~/.Xdefaults &
+
+# Start dmenu
+dmenu &
+
+# Start the terminal
+urxvt &
+
+# Start a browser
+chromium &
+
+exec dbus-launch xmonad
