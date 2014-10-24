@@ -11,13 +11,13 @@ myTerminal = "urxvt"
 
 main :: IO ()
 main = do
-    xmproc <- spawnPipe "xmobar"
+    xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
     xmonad $ defaultConfig
         { manageHook = manageDocks  <+> manageHook defaultConfig
-        , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , layoutHook = avoidStruts   $  layoutHook defaultConfig
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "green" "" . shorten 60
+                        , ppTitle = xmobarColor "green" "" . shorten 100
                         }
         , terminal = myTerminal
         , focusFollowsMouse = False
