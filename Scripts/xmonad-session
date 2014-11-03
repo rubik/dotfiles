@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Execute xmonad, remember the pid
+dbus-launch xmonad & wmpid=$!
+
+# Restore wallpaper
+xloadimage -onroot ~/Documents/Backgrounds/BetterMan.jpg
+
+# Load some X (and related apps) settings.
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+# Enable numlock
+numlockx on
+
+# Set the keyboard layout
+setxkbmap it
+
+# Load cursor
+xsetroot -cursor_name left_ptr &
+
+# Run compositor for transparent windows
+#xcompmgr &
+
+# Run rxvt unicode daemon
+urxvtd -q -o -f &
+
+# Run PCManFM daemon
+pcmanfm -d
+
+# Lock and turn off monitor after 7 minutes of inactivity
+xautolock -time 7 -locker "i3lock -d -c 000000" &
+
+# Now wait for xmonad
+wait $wmpid
