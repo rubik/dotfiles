@@ -83,11 +83,6 @@ au! Syntax kivy source $HOME/.vim/syntax/kivy.vim
 au BufRead,BufNewFile *.t set filetype=gobble
 au Filetype gobble setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" HTML: map set htmldjango filetype for every html file
-au BufRead,BufNewFile *.html set filetype=html syntax=mustache
-" Closetag.vim
-au Filetype html,htmldjango,xml,xsl source $HOME/.vim/bundle/closetag.vim/plugin/closetag.vim
-iabbrev </ <C-_>
 " Local settings
 autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4
@@ -115,6 +110,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"'
 " Syntastic options
 let g:syntastic_haskell_checkers=['hlint']
 let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
+" Mustache-Handlebars options
+let g:mustache_abbreviations=1
 " Airline options
 set laststatus=2
 " Change the leader key
