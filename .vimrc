@@ -39,6 +39,7 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'hdima/python-syntax'
 Plugin 'rubik/vim-radon'
 Plugin 'lervag/vim-latex'
+Plugin 'chrisgillis/vim-bootstrap3-snippets'
 
 call vundle#end()
 
