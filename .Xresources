@@ -5,12 +5,6 @@
 *VT100.colorUL:         cyan
 *VT100.veryBoldColors:  6
 
-! Make Ctrl-Arrows works in Vim
-URxvt.keysym.Control-Up:    \033[1;5A
-URxvt.keysym.Control-Down:  \033[1;5B
-URxvt.keysym.Control-Left:  \033[1;5D
-URxvt.keysym.Control-Right: \033[1;5C
-
 ! Native transparency
 URxvt.transparent: true
 URxvt.shading: 23
@@ -28,19 +22,19 @@ URxvt.geometry: 90x37
 URxvt.borderLess: false
 
 ! Font and letter spacing
-! I want antialiasing!!
 ! URxvt.font: xft:Monospace:pixelsize=13:antialias=true
 URxvt.font: xft:Meslo LG M for Powerline:pixelsize=13:antialias=false
 URxvt.letterSpace: -1
 
 ! Perl extensions
-URxvt.perl-ext-common : default,matcher,tabbed,fullscreen
-URxvt.urlLauncher     : /usr/bin/chromium
-URxvt.matcher.button  : 1
+URxvt.perl-ext-common: default,tabbedex
 
-! Fullscreen switch
-URxvt.keysym.F11:  perl:fullscreen:switch
-
+Urxvt.tabbed.no-tabbedex-keys: true
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-v:     \026
 
 ! Solarized color scheme for the X Window System
 !
