@@ -40,7 +40,7 @@ Plugin 'rubik/vim-radon'
 Plugin 'lervag/vim-latex'
 Plugin 'chrisgillis/vim-bootstrap3-snippets'
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plugin 'rubik/vim-snippets'
 
 call vundle#end()
 
