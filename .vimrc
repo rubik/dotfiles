@@ -29,8 +29,7 @@ Plugin 'Rykka/clickable.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'rubik/vim-dg'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'dag/vim-haskell'
-Plugin 'dag/vim-cabal'
+Plugin 'raichoo/haskell-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
@@ -40,6 +39,8 @@ Plugin 'hdima/python-syntax'
 Plugin 'rubik/vim-radon'
 Plugin 'lervag/vim-latex'
 Plugin 'chrisgillis/vim-bootstrap3-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
@@ -57,8 +58,8 @@ syntax enable
 " ##########################################################################
 " Mappings.
 " Switch between buffers
-map <C-Right> :bn<CR>
-map <C-Left> :bp<CR>
+map <C-l> :bn<CR>
+map <C-h> :bp<CR>
 " Toggle paste mode
 command P :set paste! paste?
 " Toggle search highlights and show current value
@@ -79,10 +80,6 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Add colorscheme for Kivy files
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/syntax/kivy.vim
-
-" Custom indent for Cram/Gobble files
-au BufRead,BufNewFile *.t set filetype=gobble
-au Filetype gobble setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Local settings
 autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -115,6 +112,11 @@ let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
 let g:mustache_abbreviations=1
 " Airline options
 set laststatus=2
+" UltiSnips configuration
+"let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Change the leader key
 let mapleader = ','
 

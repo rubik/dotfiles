@@ -27,9 +27,8 @@ URxvt.font: xft:Meslo LG M for Powerline:pixelsize=13:antialias=false
 URxvt.letterSpace: -1
 
 ! Perl extensions
-URxvt.perl-ext-common: default,tabbedex
+URxvt.perl-ext-common: default
 
-Urxvt.tabbed.no-tabbedex-keys: true
 URxvt.keysym.Control-Up:    \033[1;5A
 URxvt.keysym.Control-Down:  \033[1;5B
 URxvt.keysym.Control-Left:  \033[1;5D
