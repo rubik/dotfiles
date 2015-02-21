@@ -81,7 +81,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/syntax/kivy.vim
 " Set the correct filetype for new TeX files
-autocmd BufRead,BufNewFile *.tex set filetype=tex
+let g:tex_flavor = 'tex'
 
 " Local settings
 autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
