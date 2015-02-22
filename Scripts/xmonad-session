@@ -4,7 +4,7 @@
 dbus-launch xmonad & wmpid=$!
 
 # Restore wallpaper
-xloadimage -onroot ~/Documents/Backgrounds/BetterMan.jpg
+feh --bf-fill Documents/Backgrounds/We-are-all-mad-here.jpg
 
 # Load some X (and related apps) settings.
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
