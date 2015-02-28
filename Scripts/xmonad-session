@@ -3,9 +3,6 @@
 # Execute xmonad, remember the pid
 dbus-launch xmonad & wmpid=$!
 
-# Restore wallpaper
-feh --bf-fill Documents/Backgrounds/We-are-all-mad-here.jpg
-
 # Load some X (and related apps) settings.
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
@@ -29,6 +26,8 @@ pcmanfm -d
 
 # Lock and turn off monitor after 7 minutes of inactivity
 xautolock -time 7 -locker "i3lock -d -c 000000" &
+
+feh --bg-fill Documents/Backgrounds/We-are-all-mad-here.jpg &
 
 # Now wait for xmonad
 wait $wmpid
