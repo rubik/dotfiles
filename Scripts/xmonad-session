@@ -27,7 +27,7 @@ pcmanfm -d
 # Lock and turn off monitor after 7 minutes of inactivity
 xautolock -time 7 -locker "i3lock -d -c 000000" &
 
-feh --bg-fill Documents/Backgrounds/We-are-all-mad-here.jpg &
+feh --bg-fill ~/Documents/Backgrounds/We-are-all-mad-here.jpg &
 
 # Now wait for xmonad
 wait $wmpid
