@@ -2,7 +2,6 @@ import XMonad
 import System.IO
 import Data.Bits ((.|.))
 import Control.Monad (liftM2)
-{-import XMonad.Actions.Volume-}
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run (spawnPipe)
@@ -15,12 +14,11 @@ myWorkspaces :: [String]
 myWorkspaces = ["dev", "web"] ++ map show [3..9]
 
 myManageHook = composeAll . concat $
-    [ -- Applications that go to dev
+    [
       [ className =? c --> doShift w | (c, w) <- classShifts ]
     , [ manageDocks ]
     ]
-    where classShifts = [ ("urxvt", "dev")
-                        , ("Chromium", "web")
+    where classShifts = [ ("Chromium", "web")
                         ]
 
 main :: IO ()
@@ -41,10 +39,5 @@ main = do
         , ((0, xK_Print), spawn "scrot")
         , (((mod1Mask .|. shiftMask), xK_p), spawn "pcmanfm")
         , (((mod1Mask .|. shiftMask), xK_i), spawn "chromium")
-        {-, ((controlMask .|. shiftMask, xK_k), spawn myTerminal)-}
-        {-, ((controlMask .|. shiftMask, xK_p), spawn "pcmanfm")-}
-        {-, ((controlMask .|. shiftMask, xK_i), spawn "chromium")-}
-        {-, ((0, xK_F6), void $ lowerVolume 4)-}
-        {-, ((0, xK_F7), void $ raiseVolume 4)-}
-        -- TODO: Toggle Mute
+        , (((mod1Mask .|. shiftMask), xK_m), spawn "urxvt -e alsamixer")
         ]
