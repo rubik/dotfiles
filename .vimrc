@@ -41,6 +41,7 @@ Plugin 'lervag/vim-latex'
 Plugin 'chrisgillis/vim-bootstrap3-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'rubik/vim-snippets'
+Plugin 'rubik/vim-smlpp'
 
 call vundle#end()
 
@@ -74,7 +75,6 @@ cnorea W w !sudo tee % >/dev/null<CR>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
 
 " Filetype-specific settings
 " Add colorscheme for Kivy files
@@ -119,6 +119,8 @@ set laststatus=2
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" GCC Syntastic Checker
+let g:syntastic_c_compiler_options = "-Wall -Wextra -pedantic -std=c99"
 " Change the leader key
 let mapleader = ','
 
