@@ -24,12 +24,11 @@ urxvtd -q -o -f &
 # Run PCManFM daemon
 pcmanfm -d
 
-# Restore Wallpaper
-xloadimage -onroot ~/Documents/Backgrounds/We-are-all-mad-here.jpg
-feh --bg-fill ~/Documents/Backgrounds/We-are-all-mad-here.jpg &
-
 # Lock and turn off monitor after 7 minutes of inactivity
 xautolock -time 7 -locker "i3lock -d -c 000000" &
 
 # Now wait for xmonad
 wait $wmpid
+
+# Restore Wallpaper
+feh --bg-fill ~/Documents/Backgrounds/Dew.jpg
