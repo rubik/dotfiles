@@ -42,12 +42,12 @@ Plugin 'chrisgillis/vim-bootstrap3-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'rubik/vim-snippets'
 Plugin 'rubik/vim-smlpp'
+Plugin 'floobits/floobits-neovim'
 
 call vundle#end()
 
 filetype on
 filetype plugin indent on
-
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages.
 runtime! archlinux.vim
@@ -99,6 +99,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 hi! link pythonPreCondit Include
 hi SignColumn ctermfg=12 guifg=Cyan guibg=Grey
 
+" Python location
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python'
 " Keep vim-radon always on
 let g:radon_always_on = 1
 " ctrlP options
