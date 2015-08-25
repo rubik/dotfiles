@@ -84,7 +84,7 @@ au! Syntax kivy source $HOME/.vim/syntax/kivy.vim
 let g:tex_flavor = 'tex'
 
 " Local settings
-autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4
 " Disable help split
 autocmd FileType help :autocmd BufEnter * wincmd o
@@ -154,5 +154,6 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
 set pastetoggle=<F2>
+set incsearch
 
 let g:dg_highlight_builtins = 0
