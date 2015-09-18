@@ -14,7 +14,7 @@ set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage itself
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " My Plugins
 Plugin 'altercation/vim-colors-solarized'
