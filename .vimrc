@@ -19,14 +19,11 @@ Plugin 'VundleVim/Vundle.vim'
 " My Plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mattn/emmet-vim'
-Plugin 'skammer/vim-css-color'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'guersam/vim-j'
-Plugin 'endel/vim-github-colorscheme'
 Plugin 'Rykka/riv.vim'
 Plugin 'Rykka/clickable.vim'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'rubik/vim-dg'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'neovimhaskell/haskell-vim'
@@ -42,7 +39,6 @@ Plugin 'chrisgillis/vim-bootstrap3-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'rubik/vim-snippets'
 Plugin 'rubik/vim-smlpp'
-Plugin 'floobits/floobits-neovim'
 
 call vundle#end()
 

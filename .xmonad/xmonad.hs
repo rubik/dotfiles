@@ -16,6 +16,7 @@ myWorkspaces = ["dev", "web"] ++ map show [3..9]
 myManageHook = composeAll . concat $
     [
       [ className =? c --> doShift w | (c, w) <- classShifts ]
+    , [ className =? " " --> doFloat ]
     , [ manageDocks ]
     ]
     where classShifts = [ ("Chromium", "web")
