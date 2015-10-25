@@ -7,7 +7,7 @@
 
 ! Native transparency
 URxvt.transparent: true
-URxvt.shading: 23
+URxvt.shading: 15
 
 ! Set the icon
 URxvt.iconFile: /usr/share/icons/gnome/256x256/apps/terminal.png

@@ -143,6 +143,8 @@ set nofoldenable
 set foldlevelstart=99
 set foldlevel=99
 highlight ColorColumn ctermbg=lightcyan
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 set history=1000
 set undolevels=1000
