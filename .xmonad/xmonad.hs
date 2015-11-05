@@ -19,7 +19,7 @@ myManageHook = composeAll . concat $
     , [ className =? " " --> doFloat ]
     , [ manageDocks ]
     ]
-    where classShifts = [ ("Chromium", "web")
+    where classShifts = [ ("chromium", "web")
                         ]
 
 main :: IO ()
