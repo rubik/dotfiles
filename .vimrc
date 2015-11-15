@@ -10,36 +10,31 @@ filetype off
 set nocompatible
 filetype off
 
-set rtp+=$HOME/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage itself
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/autoload')
 
 " My Plugins
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mattn/emmet-vim'
-Plugin 'groenewege/vim-less'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'guersam/vim-j'
-Plugin 'Rykka/riv.vim'
-Plugin 'rubik/vim-dg'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'bling/vim-airline'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'hdima/python-syntax'
-Plugin 'rubik/vim-radon'
-Plugin 'lervag/vim-latex'
-Plugin 'chrisgillis/vim-bootstrap3-snippets'
-Plugin 'SirVer/ultisnips'
-Plugin 'rubik/vim-snippets'
-Plugin 'rubik/vim-smlpp'
+Plug 'altercation/vim-colors-solarized'
+Plug 'mattn/emmet-vim'
+Plug 'groenewege/vim-less'
+Plug 'kchmck/vim-coffee-script'
+Plug 'guersam/vim-j'
+Plug 'Rykka/riv.vim'
+Plug 'rubik/vim-dg'
+Plug 'scrooloose/nerdcommenter'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'scrooloose/syntastic'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'bling/vim-airline'
+Plug 'myusuf3/numbers.vim'
+Plug 'hdima/python-syntax'
+Plug 'rubik/vim-radon'
+Plug 'lervag/vim-latex'
+Plug 'chrisgillis/vim-bootstrap3-snippets'
+Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
+Plug 'rubik/vim-smlpp'
 
-call vundle#end()
+call plug#end()
 
 filetype on
 filetype plugin indent on
