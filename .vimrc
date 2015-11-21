@@ -23,7 +23,7 @@ Plug 'rubik/vim-dg'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'scrooloose/syntastic'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
@@ -48,6 +48,10 @@ syntax enable
 
 " ##########################################################################
 " Mappings.
+" Change the leader key
+let mapleader = ','
+" Use CtrlP for buffers
+nnoremap <leader>g :CtrlPBuffer<CR>
 " Switch between buffers
 map <C-l> :bn<CR>
 map <C-h> :bp<CR>
@@ -71,7 +75,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/syntax/kivy.vim
 " Set the correct filetype for new TeX files
-let g:tex_flavor = 'tex'
+let g:tex_flavor = 'latex'
 
 " Local settings
 autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=4 tabstop=4 softtabstop=4
@@ -94,7 +98,7 @@ let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python'
 " Keep vim-radon always on
 let g:radon_always_on = 1
-" ctrlP options
+" CtrlP options
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 set wildignore+=*/tmp/*,*.so,*.sw[op],*.zip,*.pyc
@@ -107,6 +111,7 @@ let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
 let g:mustache_abbreviations=1
 " Airline options
 set laststatus=2
+let g:airline_theme='sol'
 " UltiSnips configuration
 "let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -114,8 +119,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " GCC Syntastic Checker
 let g:syntastic_c_compiler_options = "-Wall -Wextra -pedantic -std=c99"
-" Change the leader key
-let mapleader = ','
 
 " General settings
 set number

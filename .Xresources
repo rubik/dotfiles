@@ -23,7 +23,7 @@ URxvt.borderLess: false
 
 ! Font and letter spacing
 ! URxvt.font: xft:Monospace:pixelsize=13:antialias=true
-URxvt.font: xft:Meslo LG M for Powerline:pixelsize=13:antialias=false
+URxvt.font: xft:Meslo LG M for Powerline:pixelsize=12:antialias=false
 URxvt.letterSpace: -1
 
 ! Perl extensions
