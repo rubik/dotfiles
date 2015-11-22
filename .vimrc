@@ -55,29 +55,29 @@ nnoremap <leader>g :CtrlPBuffer<CR>
 " Switch between buffers
 map <C-l> :bn<CR>
 map <C-h> :bp<CR>
-" Toggle paste mode
-command P :set paste! paste?
 " Toggle search highlights and show current value
 noremap <F4> :set hlsearch! hlsearch?<CR>
 " Copy selected text to clipboard via xclip
 vnoremap <F8> :w !xclip -selection c<CR><ESC>
-" Expand html tags (zencoding-vim)
+" Expand html tags (emmet-vim)
 map <C-y>o i<CR><Up><End><CR>
 imap <C-y>o <CR><Up><End><CR>
 " Editing a protected file as 'sudo'
 cnorea W w !sudo tee % >/dev/null<CR>
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" EasyMotion mappings
+map <leader>l <Plug>(easymotion-lineforward)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+map <leader>h <Plug>(easymotion-linebackward)
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map n <Plug>(easymotion-next)
+map N <Plug>(easymotion-prev)
 
 " Filetype-specific settings
 " Add colorscheme for Kivy files
 au BufRead,BufNewFile *.kv set filetype=kivy
 au! Syntax kivy source $HOME/.vim/syntax/kivy.vim
-" Set the correct filetype for new TeX files
-let g:tex_flavor = 'latex'
-
-" Local settings
 autocmd FileType vim,html,htmldjango,xml,javascript,coffee setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4
 " Disable help split
@@ -87,17 +87,24 @@ autocmd FileType help :autocmd BufEnter * wincmd o
 set background=dark
 colorscheme solarized
 
+highlight! link pythonPreCondit Include
+highlight SignColumn ctermfg=12 guifg=Cyan guibg=Grey
+highlight ColorColumn ctermbg=lightcyan
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 " Automatically remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-hi! link pythonPreCondit Include
-hi SignColumn ctermfg=12 guifg=Cyan guibg=Grey
-
+" Set the correct filetype for new TeX files
+let g:tex_flavor = 'latex'
 " Python location
 let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 " Keep vim-radon always on
 let g:radon_always_on = 1
+" Vim-dg options
+let g:dg_highlight_builtins = 0
 " CtrlP options
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
@@ -107,8 +114,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"'
 " Syntastic options
 let g:syntastic_haskell_checkers=['hlint']
 let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
-" Mustache-Handlebars options
-let g:mustache_abbreviations=1
+let g:syntastic_c_compiler_options = "-Wall -Wextra -pedantic -std=c99"
 " Airline options
 set laststatus=2
 let g:airline_theme='sol'
@@ -117,8 +123,8 @@ let g:airline_theme='sol'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" GCC Syntastic Checker
-let g:syntastic_c_compiler_options = "-Wall -Wextra -pedantic -std=c99"
+" EasyMotion options
+let g:EasyMotion_startofline = 0 " keep cursor column when using JK motion
 
 " General settings
 set number
@@ -135,9 +141,6 @@ set colorcolumn=+1
 set nofoldenable
 set foldlevelstart=99
 set foldlevel=99
-highlight ColorColumn ctermbg=lightcyan
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
 
 set history=1000
 set undolevels=1000
@@ -150,5 +153,3 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
 set pastetoggle=<F2>
 set incsearch
-
-let g:dg_highlight_builtins = 0
