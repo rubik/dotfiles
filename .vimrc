@@ -51,7 +51,7 @@ syntax enable
 " Change the leader key
 let mapleader = ','
 " Use CtrlP for buffers
-nnoremap <leader>g :CtrlPBuffer<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 " Switch between buffers
 map <C-l> :bn<CR>
 map <C-h> :bp<CR>
@@ -146,8 +146,11 @@ set history=1000
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title
-set visualbell
+set timeoutlen=500
+set ttimeoutlen=10
+set novisualbell
 set noerrorbells
+set t_vb=
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
