@@ -31,4 +31,4 @@ xautolock -time 7 -locker "i3lock -d -c 000000" &
 wait $wmpid
 
 # Restore Wallpaper
-feh --bg-fill ~/Documents/Backgrounds/Psylocibin.png &
+feh --bg-fill ~/Documents/Backgrounds/osu11.jpg &

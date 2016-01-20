@@ -41,4 +41,5 @@ main = do
         , (((mod1Mask .|. shiftMask), xK_p), spawn "pcmanfm")
         , (((mod1Mask .|. shiftMask), xK_i), spawn "chromium")
         , (((mod1Mask .|. shiftMask), xK_m), spawn "urxvt -e alsamixer")
+        , ((mod1Mask, xK_p), spawn "rofi -show run")
         ]
