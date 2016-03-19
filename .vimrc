@@ -18,6 +18,7 @@ Plug 'mattn/emmet-vim'
 Plug 'groenewege/vim-less'
 Plug 'kchmck/vim-coffee-script'
 Plug 'guersam/vim-j'
+Plug 'elixir-lang/vim-elixir'
 Plug 'Rykka/riv.vim'
 Plug 'rubik/vim-dg'
 Plug 'scrooloose/nerdcommenter'
@@ -113,7 +114,7 @@ let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
 let g:syntastic_c_compiler_options = "-Wall -Wextra -pedantic -std=c99"
 " Airline options
 set laststatus=2
-let g:airline_theme='sol'
+"let g:airline_theme='sol'
 " UltiSnips configuration
 "let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"
