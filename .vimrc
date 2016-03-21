@@ -106,8 +106,12 @@ let g:dg_highlight_builtins = 0
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 set wildignore+=*/tmp/*,*.so,*.sw[op],*.zip,*.pyc
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/](node_modules|_?build)$',
+    \ 'file': '\v\.(beam)$',
+    \ }
 " It needs The Silver Searcher
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc" --ignore "*.beam" --ignore node_modules --ignore _build --ignore build'
 " Syntastic options
 let g:syntastic_haskell_checkers=['hlint']
 let g:syntastic_python_checkers=['frosted', 'pep8', 'python']
