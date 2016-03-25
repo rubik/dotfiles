@@ -16,6 +16,7 @@ call plug#begin('~/.vim/autoload')
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'groenewege/vim-less'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'guersam/vim-j'
 Plug 'elixir-lang/vim-elixir'
