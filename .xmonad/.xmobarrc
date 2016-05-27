@@ -1,7 +1,6 @@
 Config {
-
    -- appearance
-     font =         "xft:Bitstream Vera Sans Mono:size=10:bold:antialias=true"
+     font =         "xft:DejaVu Sans Mono:size=10:dpi=160:bold:antialias=true"
    , bgColor =      "#002b36"
    , fgColor =      "#758bb3"
    , position =     Top
