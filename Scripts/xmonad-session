@@ -25,7 +25,7 @@ urxvtd -q -o -f &
 pcmanfm -d
 
 # Lock and turn off monitor after 7 minutes of inactivity
-xautolock -time 7 -locker "i3lock -d -c 000000" &
+xss-lock -- "i3lock -d -c 000000" &
 
 # Now wait for xmonad
 wait $wmpid

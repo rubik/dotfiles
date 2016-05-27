@@ -28,6 +28,10 @@ main = do
     xmonad $ defaultConfig
         { manageHook = myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts   $  layoutHook defaultConfig
+        -- Make room for xmobar on every workspace
+        , handleEventHook = mconcat
+                          [ docksEventHook
+                          , handleEventHook defaultConfig ]
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 100
