@@ -144,6 +144,9 @@ map <leader>h <Plug>(easymotion-linebackward)
 " Disable help split
 au FileType help :autocmd BufEnter * wincmd o
 
+" Use tabs in gitconfig files
+au FileType gitconfig setlocal noexpandtab
+
 " Enable Neomake on buffer read/write
 au BufWritePost * Neomake
 au BufReadPost  * Neomake
