@@ -107,7 +107,7 @@ endif
 " Change the leader key
 let g:mapleader = ','
 
-" Because we wanna go fast
+" Because we wanna go fast (italian layout)
 nnoremap . :
 
 " Toggle PASTE mode with F2
@@ -118,6 +118,11 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Use CtrlP to show available buffers
 nnoremap <leader>b :CtrlPBuffer<CR>
+
+" Location bindings
+noremap <leader>e :lopen<CR>
+noremap <leader>[ :lprev<CR>
+noremap <leader>] :lnext<CR>
 
 " Switch between buffers
 map <C-l> :bn<CR>
@@ -131,7 +136,7 @@ map <C-y>o i<CR><Up><End><CR>
 imap <C-y>o <CR><Up><End><CR>
 
 " Editing a protected file as 'sudo'
-cnoreabbrev W w !sudo tee % >/dev/null<CR>
+cnoremap W w !sudo tee % >/dev/null<CR>
 
 " Cold turkey; no more arrows motions.
 nnoremap <silent> <up>    <nop>
