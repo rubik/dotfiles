@@ -107,8 +107,14 @@ endif
 " Change the leader key
 let g:mapleader = ','
 
+" Because we wanna go fast
+nnoremap . :
+
 " Toggle PASTE mode with F2
 set pastetoggle=<F2>
+
+" Fucking tired of searching for /lkasdjflk to clear highlights
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Use CtrlP to show available buffers
 nnoremap <leader>b :CtrlPBuffer<CR>
