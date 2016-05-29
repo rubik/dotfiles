@@ -15,5 +15,6 @@
 	d = diff
 	b = branch
 	c = commit
+	cm = commit -m
 [core]
 	editor = vim
