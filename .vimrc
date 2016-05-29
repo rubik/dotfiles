@@ -107,9 +107,6 @@ endif
 " Change the leader key
 let g:mapleader = ','
 
-" Because we wanna go fast (italian layout)
-nnoremap . :
-
 " Toggle PASTE mode with F2
 set pastetoggle=<F2>
 
