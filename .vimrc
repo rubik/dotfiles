@@ -111,7 +111,7 @@ let g:mapleader = ','
 set pastetoggle=<F2>
 
 " Fucking tired of searching for /lkasdjflk to clear highlights
-nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>7 :nohlsearch<CR>
 
 " Use CtrlP to show available buffers
 nnoremap <leader>b :CtrlPBuffer<CR>
