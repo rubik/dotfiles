@@ -33,6 +33,7 @@ Plug 'rubik/vim-radon'
 Plug 'lervag/vim-latex'
 Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neomake/neomake'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -185,6 +186,9 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"
 \ --ignore "*.beam" --ignore node_modules --ignore _build --ignore build
 \ --ignore "*.o"'
+
+" Airline options
+let g:airline_powerline_fonts = 1
 
 " Neomake options
 let g:neomake_list_height = 3
