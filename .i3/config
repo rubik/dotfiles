@@ -3,34 +3,23 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # 22 jul 2015 - E7
 
-#.......
-# Font
-#.......
-
-#set $ft xft:DroidSans:size=8
-#set $ft pango:Inconsolata:size=8
-#set $ft -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
-font pango:Terminus 8
-set $ft terminus12
-#font $ft
-
-#..........
+###########
 # Look
-#..........
+###########
 
 new_window pixel 1
 new_float pixel 2
 
 # Hybrid colors
-set $back               #1d1F21
-set $black              #282A2E
-set $grey               #373B41
-set $lightgrey          #707880
-set $white              #C5C8C6
-set $yellow             #F0C674
-set $red                #CC6666
-set $darkred            #A54242
-set $green              #B5BD56
+set $back      #1D1F21
+set $black     #282A2E
+set $grey      #373B41
+set $lightgrey #707880
+set $white     #C5C8C6
+set $yellow    #F0C674
+set $red       #CC6666
+set $darkred   #A54242
+set $green     #B5BD56
 
 #class                  border      backgr.     text        split
 client.focused          $green      $green      $black      $red
@@ -39,44 +28,36 @@ client.unfocused        $grey       $grey       $lightgrey  $grey
 client.urgent           $red        $red        $black      $red
 client.background       $back
 
-#..........
+##############
 # Applications
-#..........
-
-# Using bindcode for compatibility
+##############
 
 # Principal mod key (Super = Win key)
 # mod1 = Alt (xmodmap to show)
+# mod2 = Num Lock
 # mod4 = Winkey (xmodmap to show)
 set $mod Mod1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Terminal (mod+shift+Enter)
-bindcode $mod+Shift+36 exec urxvt
-# Chromium (mod+shift+i)
-bindcode $mod+Shift+31 exec chromium
-# PCManFM (mod+shift+p)
-bindcode $mod+Shift+33 exec pcmanfm
-# Alsamixer (mod+shift+m)
-bindcode $mod+Shift+58 exec urxvt -e alsamixer
-# Rofi (mod+p)
-bindcode $mod+33 exec rofi -show run
-# Scrot (Print)
-bindcode 107 exec scrot
-# virtualbox (mod+winkey+v)
-#bindcode $mod+Mod1+55 exec ~/.i3/i3_focus_or_run.sh -c VirtualBox VirtualBox
+# Terminal
+bindsym $mod+Shift+Return exec urxvt
+# Chromium
+bindsym $mod+Shift+i exec chromium
+# PCManFM
+bindsym $mod+Shift+p exec pcmanfm
+# Alsamixer
+bindsym $mod+Shift+m exec urxvt -e alsamixer
+# Rofi
+bindsym $mod+p exec rofi -show run
+# Scrot
+bindsym Print exec scrot
 
 # Media keys
-# En Manzanita ya lo hace solo el pbbuttons
-#bindcode 123 exec --no-startud-id "amixer sset Master 5%+"
-#bindcode 122 exec --no-startud-id "amixer sset Master 5%-"
-#bindcode 121 exec --no-startud-id "amixer -q sset Master toggle"
-#bindcode XF86AudioPlay exec ncmpcpp toggle
-#bindcode XF86AudioStop exec ncmpcpp stop
-#bindcode XF86AudioPrev exec ncmpcpp prev
-#bindcode XF86AudioNext exec ncmpcpp next
+bindsym XF86AudioRaiseVolume exec --no-startud-id "amixer sset Master 5%+"
+bindsym XF86AudioLowerVolume exec --no-startud-id "amixer sset Master 5%-"
+bindsym XF86AudioMute exec --no-startud-id "amixer -q sset Master toggle"
 
 #assign application to workspace
 assign [class="chromium"] 2:web
@@ -84,88 +65,86 @@ assign [class="chromium"] 2:web
 # Layout
 for_window [class="(?i)feh"] floating enable
 
-#...........
+############
 # Keybinds i3
-#...........
+############
 
 # disable this shit
 focus_follows_mouse no
 
 # kill focused window (mod+shift+c)
-bindcode $mod+Shift+54 kill
+bindsym $mod+Shift+c kill
 
 # hjkl to change focus
-bindcode $mod+43 focus left
-bindcode $mod+44 focus down
-bindcode $mod+45 focus up
-bindcode $mod+46 focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # Shitf+hjkl to move windows
-bindcode $mod+Shift+43 move left
-bindcode $mod+Shift+44 move down
-bindcode $mod+Shift+45 move up
-bindcode $mod+Shift+46 move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation (mod+o)
-bindcode $mod+32 split h
-bindcode $mod+Mod4+113 split h
-bindcode $mod+Mod4+114 split h
+bindsym $mod+o split h
+bindsym $mod+Mod4+Left split h
+bindsym $mod+Mod4+Right split h
 
 # split in vertical orientation (mod+v)
-bindcode $mod+55 split v
-bindcode $mod+Mod1+116 split v
-bindcode $mod+Mod1+111 split v
+bindsym $mod+v split v
+bindsym $mod+Mod1+Down split v
+bindsym $mod+Mod1+Up split v
 
-# enter fullscreen mode for the focused container (mod+f)
-bindcode $mod+41 fullscreen
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
 
-# change container layout (stacked (mod+s), tabbed (mod+t), default(mod+e))
-bindcode $mod+39 layout stacking
-bindcode $mod+28 layout tabbed
-bindcode $mod+40 layout default
-bindcode $mod+25 layout toggle split
+# change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout default
+bindsym $mod+w layout toggle split
 
 # change focus between tiling / floating windows (mod+space)
-bindcode $mod+65 focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
-# focus the parent container (mod+a)
-bindcode $mod+38 focus parent
+# focus the parent container
+bindsym $mod+a focus parent
 
-# focus the child container (mod+z)
-bindcode $mod+52 focus child
+# focus the child container
+bindsym $mod+z focus child
 
 # switch to workspace
-bindcode $mod+10 workspace 1:dev
-bindcode $mod+11 workspace 2:web
-bindcode $mod+12 workspace 3
-bindcode $mod+13 workspace 4
-bindcode $mod+14 workspace 5
-bindcode $mod+15 workspace 6
-bindcode $mod+16 workspace 7
-bindcode $mod+17 workspace 8
-bindcode $mod+18 workspace 9
-bindcode $mod+19 workspace 10
+bindsym $mod+1 workspace 1:dev
+bindsym $mod+2 workspace 2:web
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindcode $mod+Shift+10 move container to workspace 1:dev
-bindcode $mod+Shift+11 move container to workspace 2:web
-bindcode $mod+Shift+12 move container to workspace 3
-bindcode $mod+Shift+13 move container to workspace 4
-bindcode $mod+Shift+14 move container to workspace 5
-bindcode $mod+Shift+15 move container to workspace 6
-bindcode $mod+Shift+16 move container to workspace 7
-bindcode $mod+Shift+17 move container to workspace 8
-bindcode $mod+Shift+18 move container to workspace 9
-bindcode $mod+Shift+19 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 1:dev
+bindsym $mod+Shift+2 move container to workspace 2:web
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file (mod+winkey+r)
-bindcode $mod+Mod4+27 reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3) (mod+shitf+r)
-bindcode $mod+Shift+27 restart
-# exit i3 (logs you out of your X session) (mod+shitf+e)
-#bindcode $mod+Shift+26 exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Mod4+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
 
-# resize window (you can also use the mouse for that) (mod+r)
+# resize window (you can also use the mouse for that)
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
 
@@ -173,16 +152,16 @@ mode "resize" {
   # Pressing j will shrink the window’s height.
   # Pressing k will grow the window’s width.
   # Pressing l will grow the window’s height.
-  bindcode 43 resize shrink width 10 px or 10 ppt
-  bindcode 44 resize shrink height 10 px or 10 ppt
-  bindcode 45 resize grow height 10 px or 10 ppt
-  bindcode 46 resize grow width 10 px or 10 ppt
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize shrink height 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
 
   # back to normal: Enter or Escape
-  bindcode 36 mode "default"
-  bindcode 9 mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
-bindcode $mod+27 mode "resize"
+bindsym $mod+r mode "resize"
 
 # My bar
 bar {
