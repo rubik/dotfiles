@@ -1,0 +1,190 @@
+# i3 config file (v4.8)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# 22 jul 2015 - E7
+
+#.......
+# Font
+#.......
+
+#set $ft xft:DroidSans:size=8
+#set $ft pango:Inconsolata:size=8
+#set $ft -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+font pango:Terminus 8
+set $ft terminus12
+#font $ft
+
+#..........
+# Look
+#..........
+
+new_window pixel 1
+new_float pixel 2
+
+# Hybrid colors
+set $back               #1d1F21
+set $black              #282A2E
+set $grey               #373B41
+set $lightgrey          #707880
+set $white              #C5C8C6
+set $yellow             #F0C674
+set $red                #CC6666
+set $darkred            #A54242
+set $green              #B5BD56
+
+#class                  border      backgr.     text        split
+client.focused          $green      $green      $black      $red
+client.focused_inactive $grey       $grey       $lightgrey  $grey
+client.unfocused        $grey       $grey       $lightgrey  $grey
+client.urgent           $red        $red        $black      $red
+client.background       $back
+
+#..........
+# Applications
+#..........
+
+# Using bindcode for compatibility
+
+# Principal mod key (Super = Win key)
+# mod1 = Alt (xmodmap to show)
+# mod4 = Winkey (xmodmap to show)
+set $mod Mod1
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Terminal (mod+shift+Enter)
+bindcode $mod+Shift+36 exec urxvt
+# Chromium (mod+shift+i)
+bindcode $mod+Shift+31 exec chromium
+# PCManFM (mod+shift+p)
+bindcode $mod+Shift+33 exec pcmanfm
+# Alsamixer (mod+shift+m)
+bindcode $mod+Shift+58 exec urxvt -e alsamixer
+# Rofi (mod+p)
+bindcode $mod+33 exec rofi -show run
+# Scrot (Print)
+bindcode 107 exec scrot
+# virtualbox (mod+winkey+v)
+#bindcode $mod+Mod1+55 exec ~/.i3/i3_focus_or_run.sh -c VirtualBox VirtualBox
+
+# Media keys
+# En Manzanita ya lo hace solo el pbbuttons
+#bindcode 123 exec --no-startud-id "amixer sset Master 5%+"
+#bindcode 122 exec --no-startud-id "amixer sset Master 5%-"
+#bindcode 121 exec --no-startud-id "amixer -q sset Master toggle"
+#bindcode XF86AudioPlay exec ncmpcpp toggle
+#bindcode XF86AudioStop exec ncmpcpp stop
+#bindcode XF86AudioPrev exec ncmpcpp prev
+#bindcode XF86AudioNext exec ncmpcpp next
+
+#assign application to workspace
+assign [class="chromium"] 2:web
+
+# Layout
+for_window [class="(?i)feh"] floating enable
+
+#...........
+# Keybinds i3
+#...........
+
+# disable this shit
+focus_follows_mouse no
+
+# kill focused window (mod+shift+c)
+bindcode $mod+Shift+54 kill
+
+# hjkl to change focus
+bindcode $mod+43 focus left
+bindcode $mod+44 focus down
+bindcode $mod+45 focus up
+bindcode $mod+46 focus right
+
+# Shitf+hjkl to move windows
+bindcode $mod+Shift+43 move left
+bindcode $mod+Shift+44 move down
+bindcode $mod+Shift+45 move up
+bindcode $mod+Shift+46 move right
+
+# split in horizontal orientation (mod+o)
+bindcode $mod+32 split h
+bindcode $mod+Mod4+113 split h
+bindcode $mod+Mod4+114 split h
+
+# split in vertical orientation (mod+v)
+bindcode $mod+55 split v
+bindcode $mod+Mod1+116 split v
+bindcode $mod+Mod1+111 split v
+
+# enter fullscreen mode for the focused container (mod+f)
+bindcode $mod+41 fullscreen
+
+# change container layout (stacked (mod+s), tabbed (mod+t), default(mod+e))
+bindcode $mod+39 layout stacking
+bindcode $mod+28 layout tabbed
+bindcode $mod+40 layout default
+bindcode $mod+25 layout toggle split
+
+# change focus between tiling / floating windows (mod+space)
+bindcode $mod+65 focus mode_toggle
+
+# focus the parent container (mod+a)
+bindcode $mod+38 focus parent
+
+# focus the child container (mod+z)
+bindcode $mod+52 focus child
+
+# switch to workspace
+bindcode $mod+10 workspace 1:dev
+bindcode $mod+11 workspace 2:web
+bindcode $mod+12 workspace 3
+bindcode $mod+13 workspace 4
+bindcode $mod+14 workspace 5
+bindcode $mod+15 workspace 6
+bindcode $mod+16 workspace 7
+bindcode $mod+17 workspace 8
+bindcode $mod+18 workspace 9
+bindcode $mod+19 workspace 10
+
+# move focused container to workspace
+bindcode $mod+Shift+10 move container to workspace 1:dev
+bindcode $mod+Shift+11 move container to workspace 2:web
+bindcode $mod+Shift+12 move container to workspace 3
+bindcode $mod+Shift+13 move container to workspace 4
+bindcode $mod+Shift+14 move container to workspace 5
+bindcode $mod+Shift+15 move container to workspace 6
+bindcode $mod+Shift+16 move container to workspace 7
+bindcode $mod+Shift+17 move container to workspace 8
+bindcode $mod+Shift+18 move container to workspace 9
+bindcode $mod+Shift+19 move container to workspace 10
+
+# reload the configuration file (mod+winkey+r)
+bindcode $mod+Mod4+27 reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3) (mod+shitf+r)
+bindcode $mod+Shift+27 restart
+# exit i3 (logs you out of your X session) (mod+shitf+e)
+#bindcode $mod+Shift+26 exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that) (mod+r)
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+
+  # Pressing h will shrink the window’s width.
+  # Pressing j will shrink the window’s height.
+  # Pressing k will grow the window’s width.
+  # Pressing l will grow the window’s height.
+  bindcode 43 resize shrink width 10 px or 10 ppt
+  bindcode 44 resize shrink height 10 px or 10 ppt
+  bindcode 45 resize grow height 10 px or 10 ppt
+  bindcode 46 resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape
+  bindcode 36 mode "default"
+  bindcode 9 mode "default"
+}
+bindcode $mod+27 mode "resize"
+
+# My bar
+bar {
+  i3bar_command ~/.config/lemonbar/i3_lemonbar.sh
+}

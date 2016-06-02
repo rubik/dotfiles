@@ -1,2 +1,2 @@
 #!/bin/sh
-exec xmonad-session
+exec i3-session
