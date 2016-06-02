@@ -65,7 +65,7 @@ set history=1000
 set undolevels=1000
 
 " Ignore a lot of stuff
-set wildignore+=*.sw[opa],*.bak,*.pyc,*.so,*.class,*.beam
+set wildignore+=*.sw[opa],*.bak,*.pyc,*.o,*.so,*.class,*.beam
 set wildignore+=.git,.hg,.bzr,.svn
 set wildignore+=*.jpg,*.jpeg,*.bmp,*.png,*.gif
 set wildignore+=build/*,tmp/*,vendor/cache/*
@@ -180,12 +180,11 @@ let g:dg_highlight_builtins = 0
 " CtrlP options
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](node_modules|_?build)$',
-    \ 'file': '\v\.(beam)$',
-    \ }
+
 " Make it use The Silver Searcher
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc" --ignore "*.beam" --ignore node_modules --ignore _build --ignore build'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"
+\ --ignore "*.beam" --ignore node_modules --ignore _build --ignore build
+\ --ignore "*.o"'
 
 " Neomake options
 let g:neomake_list_height = 3
