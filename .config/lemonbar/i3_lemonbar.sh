@@ -2,10 +2,15 @@
 #
 # I3 bar with https://github.com/krypt-n/bar
 
+function config {
+    value=$(xrdb -query | grep "$1" | cut -d':' -f2- | sed -e 's/^\s*//');
+    echo $value
+}
+
 panel_fifo="/tmp/i3_lemonbar_${USER}"
-font="Terminess Powerline:size=20:dpi=116:antialias=true"
-iconfont="fontellolemonbar:size=18:dpi=116:antialias=true"
-iconfont2="FontAwesome:size=18:dpi=116:antialias=true"
+font=$(config "lemonbar.font")
+iconfont=$(config "lemonbar.iconfont")
+iconfont2=$(config "lemonbar.iconfont2")
 color_back="#FF363847"
 color_fore="#FF282a36"
 res_w=$(xrandr | grep "current" | awk '{print $8a}')
