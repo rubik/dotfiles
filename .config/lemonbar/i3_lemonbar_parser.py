@@ -111,7 +111,7 @@ def sys_(line, state):
         battery_icon = glyphs['icon_bolt']
         status_text = 'no battery'
     else:
-        bat_status = sys_arr[5].split()
+        bat_status = sys_arr[4].split()
         capacity = int(bat_status[1][:-1])
         if bat_status[0] == 'BAT':
             if capacity <= 5:
@@ -128,7 +128,10 @@ def sys_(line, state):
                 battery_icon = glyphs['icon_bat4']
         else:
             battery_icon = glyphs['icon_bolt']
-        status_text = '%s%% %.1gh' % (capacity, short(bat_status[2]))
+        if len(bat_status) < 3:
+            status_text = str(capacity) + '%'
+        else:
+            status_text = '%s%% %.1gh' % (capacity, short(bat_status[2]))
     bat = ('%%{F${battery_bgcolor}}${sep_left}%%{F${color_icon} '
            'B${battery_bgcolor} T3} ${battery_icon} '
            '%%{T1}%s') % status_text
