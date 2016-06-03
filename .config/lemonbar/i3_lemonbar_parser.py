@@ -71,9 +71,9 @@ def sys_(line, state):
     datetime = sys_arr[0].split()
     # date
     if res_w < 1024:
-        actual_date = '{} {} {}'.format(*datetime)
-    else:
         actual_date = '{} {}'.format(*datetime)
+    else:
+        actual_date = '{} {} {}'.format(*datetime)
     date = ('%%{F${color_head}}${sep_left}%%{F${color_icon} B${color_head}}'
             '%%{T2} ${icon_cal}%%{F- T1} %s') % actual_date
     # time
