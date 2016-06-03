@@ -66,8 +66,7 @@ def short(timedelta):
 
 def sys_(line, state):
     # i3status = {0 = wday, 1 = mday, 2 = month, 3 = time}, 1 = cpu_usage,
-    # 2 = cpu_load, 3 = cpu_temp1, 4 = cpu_temp2, 5 = battery, 6 = wlan,
-    # 7 = eth
+    # 2 = cpu_load, 3 = cpu_temp, 4 = battery, 5 = wlan, 6 = eth
     sys_arr = line.split('|')
     datetime = sys_arr[0].split()
     # date
@@ -96,8 +95,7 @@ def sys_(line, state):
             'B${color_sec_b3}} %%{T2}${icon_cpu_load}%%{F${color_fore} '
             'T1} %s') % sys_arr[2]
     # cpu_temp
-    t1, t2 = int(sys_arr[3]), int(sys_arr[4])
-    t = max(t1, t2)
+    t = int(sys_arr[3])
     if t >= temp_alert2:
         temp_cback = '$color_alert2'
     elif t >= temp_alert1:
@@ -106,43 +104,49 @@ def sys_(line, state):
         temp_cback = '$color_sec_b1'
     cpu_temp = ('%%{F%(temp_cback)s}${sep_left}%%{F${color_icon} '
                 'B%(temp_cback)s} %%{T2}${icon_cpu_temp}%%{F${color_fore} T1} '
-                '%(t1)d %(t2)d') % dict(t1=t1, t2=t2, temp_cback=temp_cback)
+                '%(t)d') % dict(t=t, temp_cback=temp_cback)
     # battery
-    bat_status = sys_arr[5].split()
-    capacity = int(bat_status[1][:-1])
-    if bat_status[0] == 'BAT':
-        battery_bgcolor = colors['color_sec_b3']
-        if capacity <= 5:
-            battery_icon = glyphs['icon_bat0']
-        elif capacity <= 30:
-            battery_icon = glyphs['icon_bat1']
-        elif capacity <= 55:
-            battery_icon = glyphs['icon_bat2']
-        elif capacity <= 85:
-            battery_icon = glyphs['icon_bat3']
-        else:
-            battery_icon = glyphs['icon_bat4']
-    else:
+    battery_bgcolor = colors['color_sec_b3']
+    if sys_arr[4] == 'No battery':
         battery_icon = glyphs['icon_bolt']
-        battery_bgcolor = colors['color_sec_b3']
+        status_text = 'no battery'
+    else:
+        bat_status = sys_arr[5].split()
+        capacity = int(bat_status[1][:-1])
+        if bat_status[0] == 'BAT':
+            if capacity <= 5:
+                battery_icon = glyphs['icon_bat0']
+                battery_bgcolor = colors['color_alert2']
+            elif capacity <= 30:
+                battery_icon = glyphs['icon_bat1']
+                battery_bgcolor = colors['color_alert1']
+            elif capacity <= 55:
+                battery_icon = glyphs['icon_bat2']
+            elif capacity <= 85:
+                battery_icon = glyphs['icon_bat3']
+            else:
+                battery_icon = glyphs['icon_bat4']
+        else:
+            battery_icon = glyphs['icon_bolt']
+        status_text = '%s%% %.1gh' % (capacity, short(bat_status[2]))
     bat = ('%%{F${battery_bgcolor}}${sep_left}%%{F${color_icon} '
            'B${battery_bgcolor} T3} ${battery_icon} '
-           '%%{T1}%s%% %.1gh') % (capacity, short(bat_status[2]))
+           '%%{T1}%s') % status_text
     # wlan
-    if sys_arr[6] == '.down.':
+    if sys_arr[5] == '.down.':
         wlan_ssid = '×'
         wlan_cback = colors['color_sec_b2']
         wlan_cicon = colors['color_disable']
         wlan_cfore = colors['color_disable']
     else:
-        wlan_ssid = sys_arr[6]
+        wlan_ssid = sys_arr[5]
         wlan_cback = colors['color_sec_b2']
         wlan_cicon = colors['color_icon']
         wlan_cfore = colors['color_fore']
     wlan = ('%%{F${wlan_cback}}${sep_left}%%{F${wlan_cicon} B${wlan_cback}} '
             '%%{T2}${icon_wifi}%%{F${wlan_cfore} T1} %s') % wlan_ssid
     # eth
-    if sys_arr[7] == '.down.':
+    if sys_arr[6] == '.down.':
         eth_name = '×'
         eth_cback = colors['color_sec_b1']
         eth_cicon = colors['color_disable']
