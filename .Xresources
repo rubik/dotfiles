@@ -1,11 +1,4 @@
-! HiDPI
-Xft.dpi: 216
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
+#include ".Xresources.hidpi"
 
 ! Make Man pages colored
 *VT100.colorBDMode:     true
@@ -31,8 +24,6 @@ URxvt.geometry: 90x37
 URxvt.borderLess: false
 
 ! Font and letter spacing
-! URxvt.font: xft:Monospace:pixelsize=13:antialias=true
-URxvt.font: xft:Meslo LG M for Powerline:pixelsize=26:antialias=false
 URxvt.letterSpace: -1
 
 ! Perl extensions
@@ -47,7 +38,6 @@ URxvt.keysym.Control-v:     \026
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
-rofi.dpi: 216
 rofi.color-enabled: true
 rofi.color-window: #273238, #273238, #1e2529
 rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
