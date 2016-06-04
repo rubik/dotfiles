@@ -3,9 +3,6 @@
 # Restore Wallpaper
 feh --bg-fill ~/Documents/Backgrounds/everest.jpg &
 
-# Execute i3, remember the pid
-dbus-launch i3 & wmpid=$!
-
 # Load some X (and related apps) settings.
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
@@ -17,6 +14,9 @@ setxkbmap it
 
 # Load cursor
 xsetroot -cursor_name left_ptr &
+
+# Execute i3, remember the pid
+dbus-launch i3 & wmpid=$!
 
 # Run rxvt unicode daemon
 urxvtd -q -o -f &
