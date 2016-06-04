@@ -21,8 +21,8 @@ colors = {
     'color_sec_b3':  '#FFF1FA8C',        # Background for section 3
     'color_sec_b4':  '#FF404254',        # Background for section 4
     'color_icon':    '#FF282a36',        # For icons
-    'color_alert1':  '#FFFF5F00',        # Background color for mild alert
-    'color_alert2':  '#FFBE0A0A',        # Background color for danger alert
+    'color_alert1':  '#FFFF9940',        # Background color for mild alert
+    'color_alert2':  '#FFFF4040',        # Background color for danger alert
     'color_disable': '#FF1D1F21',        # Foreground for disable elements
     'color_wsp':     '#FFD465A4',        # Background for selected workspace
 }
@@ -106,7 +106,7 @@ def sys_(line, state):
                 'B%(temp_cback)s} %%{T2}${icon_cpu_temp}%%{F${color_fore} T1} '
                 '%(t)d') % dict(t=t, temp_cback=temp_cback)
     # battery
-    battery_bgcolor = colors['color_sec_b3']
+    battery_bgcolor = colors['color_sec_b2']
     if sys_arr[4] == 'No battery':
         battery_icon = glyphs['icon_bolt']
         status_text = 'no battery'
@@ -138,12 +138,12 @@ def sys_(line, state):
     # wlan
     if sys_arr[5] == '.down.':
         wlan_ssid = '×'
-        wlan_cback = colors['color_sec_b2']
+        wlan_cback = colors['color_sec_b3']
         wlan_cicon = colors['color_disable']
         wlan_cfore = colors['color_disable']
     else:
         wlan_ssid = sys_arr[5]
-        wlan_cback = colors['color_sec_b2']
+        wlan_cback = colors['color_sec_b3']
         wlan_cicon = colors['color_icon']
         wlan_cfore = colors['color_fore']
     wlan = ('%%{F${wlan_cback}}${sep_left}%%{F${wlan_cicon} B${wlan_cback}} '
