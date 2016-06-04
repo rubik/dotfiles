@@ -1,2 +1,2 @@
 #!/bin/sh
-exec i3-session
+exec ~/Scripts/i3-session
