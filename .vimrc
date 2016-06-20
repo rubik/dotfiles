@@ -30,7 +30,7 @@ Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
 Plug 'hdima/python-syntax'
 Plug 'rubik/vim-radon'
-Plug 'lervag/vim-latex'
+Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
@@ -66,7 +66,7 @@ set history=1000
 set undolevels=1000
 
 " Ignore a lot of stuff
-set wildignore+=*.sw[opa],*.bak,*.pyc,*.o,*.so,*.class,*.beam
+set wildignore+=*.sw[opa],*.bak,*.pyc,*.o,*.so,*.class,*.beam,*.gch,*.gz
 set wildignore+=.git,.hg,.bzr,.svn
 set wildignore+=*.jpg,*.jpeg,*.bmp,*.png,*.gif
 set wildignore+=build/*,tmp/*,vendor/cache/*
@@ -162,6 +162,34 @@ au BufReadPost  * Neomake
 
 " Automatically remove trailing whitespace before writing
 au BufWritePre * :%s/\s\+$//e
+
+function! s:goyo_enter()
+    " Disable plugins
+    :call NumbersEnable()
+
+    " Ensure that Neovim will quit on Goyo
+    let b:quitting = 0
+    let b:quitting_bang = 0
+
+    au QuitPre <buffer> let b:quitting = 1
+    cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+    " Re-enable plugins
+    :call NumbersEnable()
+    " Quit Neovim if this is the only remaining buffer
+    if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+        if b:quitting_bang
+            qa!
+        else
+            qa
+        endif
+    endif
+endfunction
+
+au! User GoyoEnter nested call <SID>goyo_enter()
+au! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
 " {{{ Plugins options
@@ -185,7 +213,7 @@ let g:ctrlp_working_path_mode = 0
 " Make it use The Silver Searcher
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"
 \ --ignore "*.beam" --ignore node_modules --ignore _build --ignore build
-\ --ignore "*.o"'
+\ --ignore "*.o" --ignore "*.gch" --ignore "*.gz"'
 
 " Airline options
 let g:airline_powerline_fonts = 1
@@ -203,7 +231,8 @@ let g:neomake_c_clang_maker = {
 let g:neomake_cpp_enabled_makers = ['clang']
 let g:neomake_cpp_clang_maker = {
    \ 'exe': 'clang++',
-   \ 'args': ['-Wall', '-Wextra', '-Weverything', '-pedantic', '-Wno-sign-conversion'],
+   \ 'args': ['-Wall', '-Wextra', '-Weverything', '-pedantic',
+   \ '-Wno-sign-conversion', '-Wno-sign-compare'],
    \ }
 let g:neomake_python_enabled_makers = ['python', 'flake8']
 let g:neomake_javascript_enabled_makers = ['eslint']
