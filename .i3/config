@@ -44,7 +44,7 @@ floating_modifier $mod
 # Terminal
 bindsym $mod+Shift+Return exec urxvt
 # Chromium
-bindsym $mod+Shift+i exec chromium
+bindsym $mod+Shift+i exec chromium --disable-gpu
 # PCManFM
 bindsym $mod+Shift+p exec pcmanfm
 # Alsamixer
