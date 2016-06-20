@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Execute xmonad, remember the pid
-dbus-launch xmonad & wmpid=$!
+# Restore Wallpaper
+feh --bg-fill ~/Documents/Backgrounds/osu11.jpg &
 
 # Load some X (and related apps) settings.
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
@@ -15,8 +15,11 @@ setxkbmap it
 # Load cursor
 xsetroot -cursor_name left_ptr &
 
-# Run compositor for transparent windows
-#xcompmgr &
+# Lock and turn off monitor after 7 minutes of inactivity
+xss-lock -- "i3lock -d -c 000000" &
+
+# Execute xmonad, remember the pid
+dbus-launch xmonad & wmpid=$!
 
 # Run rxvt unicode daemon
 urxvtd -q -o -f &
@@ -24,11 +27,5 @@ urxvtd -q -o -f &
 # Run PCManFM daemon
 pcmanfm -d
 
-# Lock and turn off monitor after 7 minutes of inactivity
-xss-lock -- "i3lock -d -c 000000" &
-
 # Now wait for xmonad
 wait $wmpid
-
-# Restore Wallpaper
-feh --bg-fill ~/Documents/Backgrounds/osu11.jpg &

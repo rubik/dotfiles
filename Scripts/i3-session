@@ -16,7 +16,7 @@ setxkbmap it
 xsetroot -cursor_name left_ptr &
 
 # Execute i3, remember the pid
-dbus-launch i3 & wmpid=$!
+dbus-launch i3 --shmlog-size 26214400 & wmpid=$!
 
 # Run rxvt unicode daemon
 urxvtd -q -o -f &
