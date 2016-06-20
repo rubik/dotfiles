@@ -64,6 +64,11 @@ def short(timedelta):
     return int(nums[0]) + int(nums[1]) / 60
 
 
+def fire_and_forget(*command):
+    subprocess.Popen(command, stdin=None, stdout=None, stderr=None,
+                     close_fds=True)
+
+
 def sys_(line, state):
     # i3status = {0 = wday, 1 = mday, 2 = month, 3 = time}, 1 = cpu_usage,
     # 2 = cpu_load, 3 = cpu_temp, 4 = battery, 5 = wlan, 6 = eth
@@ -115,6 +120,20 @@ def sys_(line, state):
         capacity = int(bat_status[1][:-1])
         if bat_status[0] == 'BAT':
             if capacity <= 5:
+                if not state['battery_very_low']:
+                    fire_and_forget('i3-nagbar', '-m', 'Battery very low!',
+                                    '-t', 'error')
+                    state['battery_very_low'] = True
+            elif capacity <= 20:
+                if not state['battery_low']:
+                    fire_and_forget('i3-nagbar', '-m', 'Battery low!',
+                                    '-t', 'warning')
+                    state['battery_low'] = True
+            else:
+                state['battery_low'] = False
+                state['battery_very_low'] = False
+
+            if capacity <= 5:
                 battery_icon = glyphs['icon_bat0']
                 battery_bgcolor = colors['color_alert2']
             elif capacity <= 30:
@@ -128,6 +147,8 @@ def sys_(line, state):
                 battery_icon = glyphs['icon_bat4']
         else:
             battery_icon = glyphs['icon_bolt']
+            state['battery_low'] = False
+            state['battery_very_low'] = False
         if len(bat_status) < 3:
             status_text = str(capacity) + '%'
         else:
@@ -207,6 +228,8 @@ OPS = {
 state = {
     'sys': '',
     'wsp': '',
+    'battery_low': False,
+    'battery_very_low': False,
     'title': format('%{F${color_head} B${color_sec_b2}}${sep_right}'
                     '%{F${color_head} B${color_sec_b2} T2} ${icon_prog} '
                     '%{F${color_sec_b2} B-}${sep_right}%{F- B- T1}'),
