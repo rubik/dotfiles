@@ -1,0 +1,12 @@
+[Unit]
+Description=Lock X session using xlock
+Before=sleep.target
+
+[Service]
+User=miki
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/home/miki/Scripts/lock.sh
+
+[Install]
+WantedBy=sleep.target
