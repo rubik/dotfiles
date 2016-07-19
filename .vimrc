@@ -34,6 +34,7 @@ Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -118,9 +119,13 @@ nmap <silent> <leader>7 :nohlsearch<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Location bindings
-noremap <leader>e :lopen<CR>
-noremap <leader>[ :lprev<CR>
-noremap <leader>] :lnext<CR>
+nnoremap [loclist] <nop>
+nmap <leader><Space> [loclist]
+noremap [loclist]o :lopen<CR>
+noremap [loclist]c :lclose<CR>
+noremap [loclist], :ll<CR>
+noremap [loclist]n :lnext<CR>
+noremap [loclist]p :lprev<CR>
 
 " Switch between buffers
 map <C-l> :bn<CR>
@@ -134,7 +139,7 @@ map <C-y>o i<CR><Up><End><CR>
 imap <C-y>o <CR><Up><End><CR>
 
 " Editing a protected file as 'sudo'
-cnoremap W w !sudo tee % >/dev/null<CR>
+cnoreabbrev W w !sudo tee % >/dev/null<CR>
 
 " Cold turkey; no more arrows motions.
 nnoremap <silent> <up>    <nop>
@@ -152,6 +157,12 @@ map <leader>h <Plug>(easymotion-linebackward)
 " {{{ Autocommands
 " Disable help split
 au FileType help :autocmd BufEnter * wincmd o
+
+" SCSS settings
+au FileType scss setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+
+" SCSS settings
+au FileType javascript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 " Use tabs in gitconfig files
 au FileType gitconfig setlocal noexpandtab
@@ -236,7 +247,7 @@ let g:neomake_cpp_clang_maker = {
    \ }
 let g:neomake_python_enabled_makers = ['python', 'flake8']
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_scss_enabled_makers = ['scss-lint']
+let g:neomake_scss_enabled_makers = ['scsslint']
 let g:neomake_sh_enabled_makers = ['shellcheck']
 let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
