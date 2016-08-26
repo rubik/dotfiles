@@ -35,6 +35,8 @@ Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
 Plug 'mxw/vim-jsx'
+Plug 'rust-lang/rust.vim'
+Plug 'dleonard0/pony-vim-syntax'
 
 call plug#end()
 
@@ -81,6 +83,9 @@ set noerrorbells
 set t_vb=
 
 set laststatus=2
+
+" We don't need no frickin' mouse
+set mouse=c
 
 " In list mode, make whitespace obvious
 set list
@@ -242,8 +247,8 @@ let g:neomake_c_clang_maker = {
 let g:neomake_cpp_enabled_makers = ['clang']
 let g:neomake_cpp_clang_maker = {
    \ 'exe': 'clang++',
-   \ 'args': ['-Wall', '-Wextra', '-Weverything', '-pedantic',
-   \ '-Wno-sign-conversion', '-Wno-sign-compare'],
+   \ 'args': ['-std=c++11', '-Wall', '-Wextra', '-Weverything', '-pedantic',
+   \ '-Wno-c++98-compat-pedantic'],
    \ }
 let g:neomake_python_enabled_makers = ['python', 'flake8']
 let g:neomake_javascript_enabled_makers = ['eslint']

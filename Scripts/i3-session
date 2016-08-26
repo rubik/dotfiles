@@ -3,6 +3,10 @@
 # Restore Wallpaper
 feh --bg-fill ~/Documents/Backgrounds/everest.jpg &
 
+# Load pcf fonts
+xset +fp ~/.fonts
+xset fp rehash
+
 # Load some X (and related apps) settings.
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
