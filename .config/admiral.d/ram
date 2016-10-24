@@ -1,7 +1,0 @@
-#!/bin/bash
-#
-
-. $HOME/.config/admiral.d/config
-ramIcon=""
-ram=$(free -mh | awk 'NR==2{ print $3 }')
-echo " %{F$FG}$ramIcon %{F$FG}$ram "

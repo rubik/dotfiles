@@ -1,7 +1,7 @@
 [admiral]
 items = ["left", "workspaces",
          "center", "title",
-         "right", "volume", "ram", "cpu", "temp", "battery", "net", "clock"]
+         "right", "volume", "cpu", "temp", "battery", "clock"]
 
 [workspaces]
 path = "./workspace"
@@ -11,11 +11,7 @@ path = "xtitle -s -t 80"
 
 [volume]
 path = "./vol"
-reload = 0.5
-
-[ram]
-path = "./ram"
-reload = 2
+reload = 1
 
 [cpu]
 path = "./cpu"
@@ -28,10 +24,6 @@ reload = 2
 [battery]
 path = "./battery"
 reload = 10
-
-[net]
-path = "./net"
-reload = 20
 
 [clock]
 path = "./clock"
