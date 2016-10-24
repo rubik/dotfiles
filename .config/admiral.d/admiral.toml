@@ -1,0 +1,51 @@
+[admiral]
+items = ["left", "workspaces",
+         "center", "title",
+         "right", "volume", "ram", "cpu", "temp", "battery", "net", "clock"]
+
+[workspaces]
+path = "./workspace"
+
+[title]
+path = "xtitle -s -t 80"
+
+[volume]
+path = "./vol"
+reload = 0.5
+
+[ram]
+path = "./ram"
+reload = 2
+
+[cpu]
+path = "./cpu"
+reload = 1
+
+[temp]
+path = "./temp"
+reload = 2
+
+[battery]
+path = "./battery"
+reload = 10
+
+[net]
+path = "./net"
+reload = 20
+
+[clock]
+path = "./clock"
+reload = 1
+
+# Used for formatting lemonbar
+[left]
+path = "echo '%{l}'"
+static = true
+
+[center]
+path = "echo '%{c}'"
+static = true
+
+[right]
+path = "echo '%{r}'"
+static = true

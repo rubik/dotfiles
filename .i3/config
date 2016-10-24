@@ -60,7 +60,7 @@ bindsym XF86AudioLowerVolume exec --no-startud-id "amixer sset Master 5%-"
 bindsym XF86AudioMute exec --no-startud-id "amixer -q sset Master toggle"
 
 #assign application to workspace
-assign [class="chromium"] 2:web
+assign [class="Chromium"] 2:web
 
 # Layout
 for_window [class="(?i)feh"] floating enable
@@ -155,5 +155,5 @@ bindsym $mod+r mode "resize"
 
 # My bar
 bar {
-  i3bar_command ~/.config/lemonbar/i3_lemonbar.sh
+  i3bar_command ~/.i3/barstart
 }
