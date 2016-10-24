@@ -15,11 +15,9 @@ call plug#begin('~/.vim/autoload')
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'chrisgillis/vim-bootstrap3-snippets'
-Plug 'groenewege/vim-less'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'guersam/vim-j', { 'for': 'j' }
-Plug 'elixir-lang/vim-elixir'
 Plug 'Rykka/riv.vim'
 Plug 'rubik/vim-dg', { 'for': 'dg' }
 Plug 'scrooloose/nerdcommenter'
@@ -36,7 +34,7 @@ Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
 Plug 'mxw/vim-jsx'
 Plug 'rust-lang/rust.vim'
-Plug 'dleonard0/pony-vim-syntax'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 call plug#end()
 
@@ -104,8 +102,8 @@ highlight ColorColumn ctermbg=lightcyan
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+if executable('rg')
+    set grepprg=rg\ --follow\ --no-heading\ --vimgrep\ -u
     set grepformat=%f:%l:%c:%m
 endif
 " }}}
@@ -226,10 +224,12 @@ let g:dg_highlight_builtins = 0
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 
-" Make it use The Silver Searcher
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"
-\ --ignore "*.beam" --ignore node_modules --ignore _build --ignore build
-\ --ignore "*.o" --ignore "*.gch" --ignore "*.gz"'
+if executable('ag')
+    " Make it use The Silver Searcher
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "*.pyc"
+    \ --ignore "*.beam" --ignore node_modules --ignore _build --ignore build
+    \ --ignore "*.o" --ignore "*.gch" --ignore "*.gz"'
+endif
 
 " Airline options
 let g:airline_powerline_fonts = 1
