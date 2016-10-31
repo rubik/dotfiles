@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+. $HOME/.config/admiral.d/config
+
+pkill admiral &> /dev/null
+pkill lemonbar &> /dev/null
+
+admiral | lemonbar -f "$FONT1" -f "$FONT2" -B "$BBLACK" -F "$FG" -u 5 -d -p | sh
