@@ -1,0 +1,30 @@
+#!/bin/bash
+
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# Restore Wallpaper
+feh --bg-scale ~/Documents/Backgrounds/calm.jpg &
+
+# Load some X (and related apps) settings.
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+# Enable numlock
+numlockx on
+
+# Set the keyboard layout
+setxkbmap it
+
+# Load cursor
+xsetroot -cursor_name left_ptr &
+
+# Run rxvt unicode daemon
+urxvtd -q -o -f &
+
+# Run PCManFM daemon
+pcmanfm -d &
+
+sxhkd -c ~/.config/sxhkd/sxhdkrc &
+
+urxvt &
+
+exec bspwm
