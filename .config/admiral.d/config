@@ -10,9 +10,6 @@ function config {
     echo "$value"
 }
 
-# Panel
-PH=45
-
 # Fonts
 FONT1=$(config "lemonbar.font")
 FONT2=$(config "lemonbar.iconfont2")

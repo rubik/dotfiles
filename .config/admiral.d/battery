@@ -11,6 +11,9 @@ if [[ -d /sys/class/power_supply/BAT0 ]];
         if [[ "${batteryState}" == "Discharging" && ${batteryPower} -le 20 ]]; then
             batteryIcon=""
             batteryColor=${RED}
+        elif [[ "${batteryState}" == "Discharging" && ${batteryPower} -le 30 ]]; then
+            batteryIcon=""
+            batteryColor=${RED}
         elif [[ "${batteryState}" == "Discharging" && ${batteryPower} -le 40 ]]; then
             batteryIcon=""
             batteryColor=${FG}

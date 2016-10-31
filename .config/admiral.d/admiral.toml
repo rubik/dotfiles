@@ -1,25 +1,21 @@
 [admiral]
 items = ["left", "workspaces",
          "center", "title",
-         "right", "volume", "cpu", "temp", "battery", "clock"]
+         "right", "volume", "temp", "battery", "clock"]
 
 [workspaces]
-path = "./workspace"
+path = "./workspaces"
 
 [title]
 path = "xtitle -s -t 80"
 
 [volume]
 path = "./vol"
-reload = 1
-
-[cpu]
-path = "./cpu"
-reload = 1
+reload = 5
 
 [temp]
 path = "./temp"
-reload = 2
+reload = 5
 
 [battery]
 path = "./battery"
@@ -27,7 +23,7 @@ reload = 10
 
 [clock]
 path = "./clock"
-reload = 1
+reload = 5
 
 # Used for formatting lemonbar
 [left]
