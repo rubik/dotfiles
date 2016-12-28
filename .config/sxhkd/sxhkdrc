@@ -18,6 +18,10 @@ alt + shift + i
 alt + shift + p
 	pcmanfm
 
+# HTop
+super + l
+	urxvt -e htop
+
 # Volume
 XF86AudioRaiseVolume
 	ponymix increase 3
@@ -25,6 +29,7 @@ XF86AudioLowerVolume
 	ponymix decrease 3
 XF86AudioMute
 	ponymix toggle
+
 # Mixer
 alt + shift + m
 	urxvt -e alsamixer
