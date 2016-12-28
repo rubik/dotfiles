@@ -9,19 +9,16 @@
 set nocompatible
 filetype off
 
-call plug#begin('~/.vim/autoload')
+call plug#begin('~/.config/nvim/plugged')
 
 " My Plugins
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
-Plug 'chrisgillis/vim-bootstrap3-snippets'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'guersam/vim-j', { 'for': 'j' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'Rykka/riv.vim'
 Plug 'rubik/vim-dg', { 'for': 'dg' }
 Plug 'scrooloose/nerdcommenter'
-Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
@@ -32,7 +29,6 @@ Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
-Plug 'mxw/vim-jsx'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
