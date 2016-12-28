@@ -1,2 +1,0 @@
-#!/bin/bash
-/usr/bin/loginctl kill-session $XDG_SESSION_ID
