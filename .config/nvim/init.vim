@@ -89,14 +89,28 @@ set listchars+=nbsp:.
 set listchars+=extends:#
 set incsearch
 
-" Colorscheme
+" {{{ Colorscheme
 " No need for a complete colorscheme because we already set the colors in
 " .Xresources
 set background=dark
 "colorscheme base16-paraiso
+
+" Custom fixes
 highlight String ctermfg=02
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+
+" Diff highlighting
+highlight DiffAdd ctermfg=02 ctermbg=18
+highlight DiffChange ctermfg=08 ctermbg=18
+highlight DiffDelete ctermfg=01 ctermbg=18
+highlight DiffText ctermfg=04 ctermbg=18
+highlight DiffAdded ctermfg=02 ctermbg=00
+highlight DiffFile ctermfg=01 ctermbg=00
+highlight DiffNewFile ctermfg=02 ctermbg=00
+highlight DiffLine ctermfg=04 ctermbg=00
+highlight DiffRemoved ctermfg=01 ctermbg=00
+" }}}
 
 if executable('rg')
     set grepprg=rg\ --follow\ --no-heading\ --vimgrep\ -u
