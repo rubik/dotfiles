@@ -13,7 +13,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " My Plugins
 "Plug 'altercation/vim-colors-solarized'
-Plug 'rubik/vim-base16-paraiso'
 Plug 'mattn/emmet-vim'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'Rykka/riv.vim'
