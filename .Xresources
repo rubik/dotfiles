@@ -1,5 +1,5 @@
 #include ".Xresources.hidpi"
-#include ".Xresources.colors"
+#include ".Xresources.paraiso"
 
 ! Make Man pages colored
 *VT100.colorBDMode:     true
@@ -9,8 +9,11 @@
 *VT100.veryBoldColors:  6
 
 ! Native transparency
-URxvt.transparent: true
-URxvt.shading: 25
+URxvt.transparent: false
+URxvt.shading: 15
+
+! Proper background
+URxvt.background: #2d242d
 
 ! Set the icon
 URxvt.iconFile: /usr/share/icons/gnome/256x256/apps/terminal.png

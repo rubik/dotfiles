@@ -19,4 +19,4 @@
 	cm = commit -m
 	cam = commit -am
 [core]
-	editor = vim
+	editor = nvim

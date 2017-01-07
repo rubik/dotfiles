@@ -12,7 +12,8 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " My Plugins
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'rubik/vim-base16-paraiso'
 Plug 'mattn/emmet-vim'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'Rykka/riv.vim'
@@ -90,11 +91,11 @@ set listchars+=extends:#
 set incsearch
 
 " Colorscheme
+" No need for a complete colorscheme because we already set the colors in
+" .Xresources
 set background=dark
-colorscheme solarized
-highlight! link pythonPreCondit Include
-highlight SignColumn ctermfg=12 guifg=Cyan guibg=Grey
-highlight ColorColumn ctermbg=lightcyan
+"colorscheme base16-paraiso
+highlight String ctermfg=02
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
