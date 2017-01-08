@@ -8,10 +8,10 @@
 ;=====================================================
 
 [bar/main]
-monitor = VGA-1
+monitor = eDP-1
 dock = false
 width = 100%
-height = 25
+height = 45
 offset-x = 0
 offset-y = 0
 
@@ -21,13 +21,13 @@ background = #ee222222
 foreground = #ccfafafa
 linecolor = #666
 
-border-bottom = 1
+border-bottom = 3
 border-bottom-color = #333
 
 spacing = 1
 lineheight = 2
 padding-left = 0
-padding-right = 4
+padding-right = 3
 module-margin-left = 0
 module-margin-right = 2
 
@@ -83,7 +83,7 @@ label-empty-padding = 1
 [module/wifi]
 type = internal/network
 interface = wlp2s0
-interval = 3.0
+interval = 5
 ;udspeed-minwidth = 3
 
 format-connected = <label-connected>
@@ -97,8 +97,8 @@ label-disconnected-foreground = #66
 
 [module/wired]
 type = internal/network
-interface = eno1
-interval = 3.0
+interface = enp2s0
+interval = 5
 
 label-connected = %{T3}%local_ip%%{T-}
 ;label-disconnected = %{T3}Not connected%{T-}
@@ -108,7 +108,7 @@ label-connected = %{T3}%local_ip%%{T-}
 [module/date]
 type = internal/date
 date = %%{F#666}%{F#cc} %a, %d %b %%{F#666}%%{F#cc} %H:%M
-interval = 5
+interval = 30
 
 
 [module/volume]
@@ -131,13 +131,15 @@ ramp-volume-1 = 
 ramp-headphones-0 = 
 ;ramp-headphones-1 = 
 
+interval = 2
+
 
 [module/battery]
 type = internal/battery
 full-at = 98
 
 battery = BAT0
-adapter = ACAD
+adapter = AC0
 
 label-charging = %{F#c6e600}%percentage%
 label-discharging = %{F#e60053}-%percentage%
@@ -161,6 +163,8 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = #666
 animation-charging-framerate = 750
+
+interval = 5
 
 
 [module/mpd]
