@@ -1,6 +1,6 @@
 #!/bin/sh
 
-"$HOME"/.config/bspwm/barstart &
+"$HOME"/.config/polybar/launch.sh &
 sxhkd &
 
 bspc config border_width          5
