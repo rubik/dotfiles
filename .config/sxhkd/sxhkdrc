@@ -18,6 +18,10 @@ alt + shift + i
 alt + shift + p
 	pcmanfm
 
+# Ranger
+alt + shift + o
+	urxvt -e ranger
+
 # HTop
 super + l
 	urxvt -e htop
