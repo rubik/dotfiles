@@ -136,7 +136,7 @@ interval = 2
 
 [module/battery]
 type = internal/battery
-full-at = 98
+full-at = 99
 
 battery = BAT0
 adapter = AC0
@@ -165,43 +165,5 @@ animation-charging-foreground = #666
 animation-charging-framerate = 750
 
 interval = 5
-
-
-[module/mpd]
-type = internal/mpd
-
-host = localhost
-port = 6600
-
-format-online = <label-song> <icon-prev> <icon-stop> <toggle> <icon-next>
-format-online-background = #ee333333
-format-online-underline = #cc333333
-format-online-padding = 3
-
-;format-offline = <label-offline>
-;format-offline-foreground = #66
-
-;label-offline = mpd is off
-
-label-song =  %artist% - %title%
-label-song-maxlen = 45
-label-song-ellipsis = true
-
-icon-prev = 
-icon-seekb = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-icon-seekf = 
-
-icon-random = 
-icon-repeat = 
-icon-repeatone = 
-
-toggle-on-foreground = #e60053
-toggle-off-foreground = #66
-
-label-time-foreground = #77
 
 ; vim:ft=dosini
