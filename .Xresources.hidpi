@@ -1,0 +1,19 @@
+! HiDPI
+Xft.dpi: 216
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! URxvt.font: xft:Monospace:pixelsize=13:antialias=true
+URxvt.font: xft:Meslo LG M for Powerline:pixelsize=26:antialias=false
+
+! rofi
+rofi.dpi: 216
+
+! Lemonbar fonts
+lemonbar.font: Terminess Powerline:size=20:dpi=116:antialias=false
+lemonbar.iconfont: fontellolemonbar:size=18:dpi=116:antialias=false
+lemonbar.iconfont2: FontAwesome:size=18:dpi=116:antialias=false
