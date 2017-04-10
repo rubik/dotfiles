@@ -20,3 +20,5 @@
 	cam = commit -am
 [core]
 	editor = nvim
+[commit]
+	gpgsign = true

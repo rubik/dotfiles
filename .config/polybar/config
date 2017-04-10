@@ -31,14 +31,15 @@ padding-right = 3
 module-margin-left = 0
 module-margin-right = 2
 
-font-0 = hack:size=10;1
-font-1 = FontAwesome:size=10;0
+font-0 = hack:size=23;1
+font-1 = FontAwesome:size=23;0
 
 modules-left = bspwm
 ;modules-center = mpd
 modules-right = wifi wired volume battery date
 
 tray-position = right
+tray-maxsize = 33
 
 wm-restack = bspwm
 

@@ -100,6 +100,12 @@ highlight String ctermfg=02
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
+" Custom Neomake groups
+highlight NeomakeError ctermfg=01 ctermbg=8
+highlight NeomakeWarning ctermfg=01 ctermbg=8
+highlight NeomakeInfo ctermfg=01 ctermbg=8
+highlight NeomakeMessage ctermfg=01 ctermbg=8
+
 " Diff highlighting
 highlight DiffAdd ctermfg=02 ctermbg=18
 highlight DiffChange ctermfg=08 ctermbg=18
@@ -171,10 +177,11 @@ map <leader>h <Plug>(easymotion-linebackward)
 " Disable help split
 au FileType help :autocmd BufEnter * wincmd o
 
-" SCSS settings
+" CSS/SCSS settings
 au FileType scss setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+au FileType css setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
-" SCSS settings
+" JS settings
 au FileType javascript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 " Use tabs in gitconfig files
@@ -271,6 +278,10 @@ let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Vimtex
+let g:latex_view_general_viewer = 'zathura'
+let g:vimtex_view_method = 'zathura'
 
 " EasyMotion options
 " Keep cursor column when using JK motion

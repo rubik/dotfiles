@@ -3,7 +3,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Restore Wallpaper
-feh --bg-scale ~/Documents/Backgrounds/calm.jpg &
+feh --bg-scale ~/Documents/Backgrounds/eye.png &
 
 # Load some X (and related apps) settings.
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources

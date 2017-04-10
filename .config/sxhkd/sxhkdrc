@@ -26,6 +26,10 @@ alt + shift + o
 super + l
 	urxvt -e htop
 
+# IPython
+super + p
+	urxvt -e $HOME/exp/bin/ipython
+
 # Volume
 XF86AudioRaiseVolume
 	ponymix increase 3
@@ -65,10 +69,6 @@ alt + m
 # if the current node is automatic, send it to the last manual, otherwise pull the last leaf
 super + y
 	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
-
-# swap the current node and the biggest node
-alt + g
-	bspc node -s biggest
 
 #
 # state/flags
