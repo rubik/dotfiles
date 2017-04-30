@@ -22,3 +22,6 @@
 	editor = nvim
 [commit]
 	gpgsign = true
+[color "diff"]
+	meta = bold
+	frag = yellow
