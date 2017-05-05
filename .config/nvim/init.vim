@@ -12,10 +12,8 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " My Plugins
-"Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'Rykka/riv.vim'
 Plug 'rubik/vim-dg', { 'for': 'dg' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
@@ -23,13 +21,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
-Plug 'hdima/python-syntax'
 Plug 'rubik/vim-radon'
 Plug 'lervag/vimtex'
-Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
+"Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
-Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 call plug#end()
@@ -228,7 +224,7 @@ au! User GoyoLeave nested call <SID>goyo_leave()
 let g:tex_flavor = 'latex'
 
 " Python location
-let g:python_host_prog = '/usr/bin/python2'
+let g:python_host_prog = '/usr/bin/python3'
 let g:python3_host_prog = '/usr/bin/python3'
 
 " Keep vim-radon always on
