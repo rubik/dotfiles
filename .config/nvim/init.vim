@@ -23,7 +23,7 @@ Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
 Plug 'rubik/vim-radon'
 Plug 'lervag/vimtex'
-"Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
