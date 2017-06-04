@@ -12,20 +12,20 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " My Plugins
-Plug 'mattn/emmet-vim'
-Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'rubik/vim-dg', { 'for': 'dg' }
+Plug 'neomake/neomake'
 Plug 'scrooloose/nerdcommenter'
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
 Plug 'rubik/vim-radon'
-Plug 'lervag/vimtex'
-Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
-Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
+Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'rubik/vim-dg', { 'for': 'dg' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 call plug#end()
