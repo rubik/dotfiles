@@ -8,7 +8,11 @@ alt + shift + Return
 
 # program launcher
 alt + p
-	rofi -show run
+	rofi -show run -monitor -1
+
+# ssh session launcher
+alt + u
+	rofi -show ssh -monitor -1
 
 # Chromium
 alt + shift + i
@@ -28,7 +32,7 @@ super + l
 
 # IPython
 super + p
-	urxvt -e $HOME/exp/bin/ipython
+	urxvt -e ipython
 
 # Volume
 XF86AudioRaiseVolume

@@ -90,7 +90,6 @@ set incsearch
 " No need for a complete colorscheme because we already set the colors in
 " .Xresources
 set background=dark
-"colorscheme base16-paraiso
 
 " Custom fixes
 highlight String ctermfg=02
