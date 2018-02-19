@@ -8,10 +8,10 @@
 ;=====================================================
 
 [bar/main]
-monitor = eDP-1
+monitor = ${env:MONITOR:}
 dock = false
 width = 100%
-height = 40
+height = 28
 offset-x = 0
 offset-y = 0
 
@@ -29,8 +29,8 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 2
 
-font-0 = hack:size=21;0
-font-1 = FontAwesome:size=23;1
+font-0 = hack:size=10;0
+font-1 = FontAwesome:size=12;1
 
 modules-left = bspwm
 modules-right = wifi wired volume battery date
@@ -48,19 +48,19 @@ enable-click = false
 
 format = <label-state> <label-mode>
 
-label-active = %index%
+label-active = %name%
 label-active-foreground = #2de0a7
 label-active-padding = 1
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-foreground = #678bdc
 label-occupied-padding = 1
 
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = #e60053
 label-urgent-padding = 1
 
-label-empty = %index%
+label-empty = %name%
 label-empty-foreground = #666
 label-empty-padding = 1
 
@@ -92,6 +92,7 @@ format-foreground = #ed4781
 
 [module/volume]
 type = internal/volume
+master-soundcard = hw:1
 
 format-volume = <ramp-volume><label-volume>
 module-margin-right = 0

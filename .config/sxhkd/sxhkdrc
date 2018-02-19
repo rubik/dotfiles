@@ -46,6 +46,14 @@ XF86AudioMute
 alt + shift + m
 	urxvt -e alsamixer
 
+# Volume
+super + 7
+	ponymix toggle
+super + 8
+	ponymix decrease 3
+super + 9
+	ponymix increase 3
+
 # Scrot
 Print
 	scrot
