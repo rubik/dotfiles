@@ -4,7 +4,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 eval "$(ssh-agent)"
 
 # Restore Wallpaper
-feh --bg-fill ~/Documents/Backgrounds/the-fourth-phase-global-premiere.jpg &
+feh --bg-scale ~/Documents/Backgrounds/stunted-pine.jpg &
 
 # Load some X (and related apps) settings.
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
