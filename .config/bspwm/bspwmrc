@@ -19,6 +19,6 @@ bspc monitor "HDMI-2" -d 6 7 8 9 10
 
 bspc rule -a Gimp state=floating follow=on
 bspc rule -a Chromium desktop=^2
-bspc rule -a Opera desktop=^8
+bspc rule -a Opera desktop=^9
 bspc rule -a Pinentry follow=on state=floating
 bspc rule -a Libreoffice state=tiled

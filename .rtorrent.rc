@@ -53,7 +53,7 @@ port_range = 49169-49169
 check_hash = yes
 
 # Set whether the client should try to connect to UDP trackers.
-use_udp_trackers = yes
+#use_udp_trackers = yes
 
 # Alternative calls to bind and ip that should handle dynamic ip's.
 #schedule = ip_tick,0,1800,ip=rakshasa
@@ -81,4 +81,4 @@ dht_port = 6881
 
 # Enable peer exchange (for torrents not marked private)
 #
-peer_exchange = yes
+#peer_exchange = yes
