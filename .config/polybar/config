@@ -1,45 +1,99 @@
-;=====================================================
+;==========================================================
 ;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
 ;
-;   The README contains alot of information
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 ;
-;=====================================================
+;
+;   Created By Aditya Shakya.
+;
+;==========================================================
+
+[color]
+
+trans = #00000000
+white = #FFFFFF
+black = #000000
+
+bg = #1F1F1F
+fg = #FFFFFF
+fg-alt = #A9ABB0
+
+acolor = #FFFFFF
+curgent = #EF5350
+coccupied = #42A5F5
+
+shade1 = #004D40
+shade2 = #00695C
+shade3 = #00796B
+shade4 = #00897B
+shade5 = #009688
+shade6 = #26A69A
+shade7 = #4DB6AC
+shade8 = #80CBC4
+ashade8 = #2C2C2C
+
+## Material Colors
+
+red = #e53935
+pink = #d81b60
+purple = #8e24aa
+deep-purple = #5e35b1
+indigo = #3949ab
+blue = #1e88e5
+light-blue = #039be5
+cyan = #00acc1
+teal = #00897b
+green = #43a047
+light-green = #7cb342
+lime = #c0ca33
+yellow = #fdd835
+amber = #ffb300
+orange = #fb8c00
+deep-orange = #f4511e
+brown = #6d4c41
+grey = #757575
+blue-gray = #546e7a
+
+;==========================================================
 
 [bar/main]
 monitor = ${env:MONITOR:}
-dock = false
+override-redirect = false
 width = 100%
 height = 28
 offset-x = 0
 offset-y = 0
-
 bottom = false
+fixed-center = false
+line-size = 2
 
-background = #292a44
-foreground = #678bdc
-linecolor = #666
+background = ${color.bg}
+foreground = ${color.fg}
 
-spacing = 1
-lineheight = 2
-padding-top = 1
-padding-left = 0
-padding-right = 2
-module-margin-left = 0
-module-margin-right = 2
+;==========================================================
 
-font-0 = hack:size=10;0
-font-1 = FontAwesome:size=12;1
+font-0 = "Fantasque Sans Mono:pixelsize=10;2"
+font-1 = "Iosevka Nerd Font:pixelsize=11;2"
+
+;== Module Location ========================================================
 
 modules-left = bspwm
-modules-right = wifi wired volume battery date
+modules-right = volume battery network date time-miami time-losangeles
+
+;==========================================================
 
 tray-position = right
 tray-maxsize = 33
 
 wm-restack = bspwm
 
+
+;== Modules ========================================================
 
 [module/bspwm]
 type = internal/bspwm
@@ -48,26 +102,32 @@ enable-click = false
 
 format = <label-state> <label-mode>
 
-label-active = %name%
-label-active-foreground = #2de0a7
-label-active-padding = 1
+format-background = ${color.shade2}
+label-focused = 
+label-occupied = 
+label-urgent = 
+label-empty = 
 
-label-occupied = %name%
-label-occupied-foreground = #678bdc
+label-empty-padding = 1
+label-focused-padding = 1
+label-urgent-padding = 1
 label-occupied-padding = 1
 
-label-urgent = %name%
-label-urgent-background = #e60053
-label-urgent-padding = 1
+label-empty-foreground = ${color.fg}
+label-focused-foreground = ${color.acolor}
+label-urgent-foreground = ${color.curgent}
+label-occupied-foreground = "#f2331a"
 
-label-empty = %name%
-label-empty-foreground = #666
-label-empty-padding = 1
-
+[module/network]
+type = custom/script
+exec = check-network
+format-background = ${color.shade4}
+format-padding = 2
+tail = true
 
 [module/wifi]
 type = internal/network
-interface = wlp2s0
+interface = wlp3s0
 interval = 5
 
 format-connected = <label-connected>
@@ -88,49 +148,87 @@ label-connected-foreground = #ae81ff
 type = internal/date
 interval = 20
 date = " %a %d, %H:%M"
-format-foreground = #ed4781
+label-padding = 1
+label-background = ${color.shade3}
+
+
+[module/time-miami]
+type = custom/script
+exec = TZ=America/New_York date +" %H:%M"
+label-padding = 1
+label-background = ${color.shade3}
+interval = 20
+
+
+[module/time-losangeles]
+type = custom/script
+exec = TZ=America/Los_Angeles date +" %H:%M"
+label-padding = 1
+label-background = ${color.shade3}
+interval = 20
+
 
 [module/volume]
-type = internal/volume
-master-soundcard = hw:1
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 2
+format-volume-background = ${color.shade6}
+label-volume = %percentage%%
+label-muted = "婢"
+label-muted-background = ${color.shade6}
+label-muted-padding = 2
 
-format-volume = <ramp-volume><label-volume>
-module-margin-right = 0
-
-ramp-volume-0 =
-ramp-volume-1 =
-ramp-volume-2 =
-ramp-volume-3 =
-
-format-volume-foreground = #ffbc69
-format-volume-background = #292a44
-
-label-muted = 
-ramp-headphones-0 = 
-
-interval = 2
+ramp-volume-0 = 奄
+ramp-volume-1 = 奄
+ramp-volume-2 = 奔
+ramp-volume-3 = 奔
+ramp-volume-4 = 墳
+ramp-volume-5 = 墳
+ramp-volume-6 = 墳
 
 [module/battery]
 type = internal/battery
 full-at = 99
+time-format = %H:%M
 battery = BAT0
-adapter = AC0
-poll-interval = 10
-
-format-charging = <label-charging>
-format-discharging = <ramp-capacity><label-discharging>
-label-charging =  %percentage%%
-label-charging-foreground = #2de0a7
+adapter = AC
+format-charging = <animation-charging> <label-charging>
+format-charging-background = ${color.shade5}
+format-charging-foreground = ${color.black}
+format-charging-padding = 2
+label-charging = %percentage%%
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${color.shade5}
+format-discharging-padding = 2
 label-discharging = %percentage%%
-label-discharging-foreground = #2de0a7
-label-full = Full
-ramp-capacity-foreground = #2de0a7
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+format-full = <label-full>
 
-interval = 5
+format-full-prefix = " "
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+ramp-capacity-0-foreground = ${color.amber}
+ramp-capacity-1-foreground = ${color.amber}
+ramp-capacity-foreground   = ${color.fg}
+bar-capacity-width = 10
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+
+animation-charging-framerate = 750
+poll-interval = 5
 
 ; vim:ft=dosini
