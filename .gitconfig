@@ -1,6 +1,7 @@
 [user]
 	email = michelelacchia@gmail.com
 	name = Michele Lacchia
+	signingkey = C72C9D3692C0442F05E65735DEE7681EEF8BC117
 [credential]
 	helper = cache --timeout=3600
 [format]
@@ -20,8 +21,10 @@
 	cam = commit -am
 [core]
 	editor = nvim
+	autocrlf = false
 [commit]
-	gpgsign = true
 [color "diff"]
 	meta = bold
 	frag = yellow
+[gpg]
+	program = gpg

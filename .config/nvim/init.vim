@@ -18,13 +18,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
-Plug 'rubik/vim-radon'
 Plug 'junegunn/goyo.vim'
-Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
-Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'mattn/emmet-vim'
+Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
+Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'rubik/vim-dg', { 'for': 'dg' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
@@ -176,6 +174,8 @@ au FileType help :autocmd BufEnter * wincmd o
 " HTML/CSS/SCSS settings
 au FileType scss setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 au FileType css setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+au FileType html setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+au FileType htmldjango setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 " JS settings
 au FileType javascript setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4

@@ -1,5 +1,5 @@
 ! HiDPI
-Xft.dpi: 216
+Xft.dpi: 124
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintslight
@@ -7,8 +7,8 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-! URxvt.font: xft:Monospace:pixelsize=13:antialias=true
-URxvt.font: xft:Meslo LG M for Powerline:pixelsize=26:antialias=false
+URxvt.font: xft:Meslo LG M for Powerline:pixelsize=15:antialias=true
 
 ! rofi
-rofi.dpi: 216
+rofi.dpi: 124
+rofi.font: hack regular 12
