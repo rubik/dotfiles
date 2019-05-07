@@ -20,6 +20,7 @@ Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
 Plug 'rubik/vim-radon'
 Plug 'junegunn/goyo.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
@@ -177,7 +178,8 @@ au FileType scss setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 au FileType css setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 " JS settings
-au FileType javascript setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+au FileType javascript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+au FileType typescript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 " Use tabs in gitconfig files
 au FileType gitconfig setlocal noexpandtab
