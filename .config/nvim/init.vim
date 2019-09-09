@@ -20,8 +20,10 @@ Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mattn/emmet-vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
+Plug 'posva/vim-vue', {'for': 'vue'}
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'lervag/vimtex', { 'for': 'tex' }
@@ -178,7 +180,12 @@ au FileType html setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 au FileType htmldjango setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 " JS settings
-au FileType javascript setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+au FileType javascript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+au FileType typescript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+au FileType vue setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+
+" YAML settings
+au FileType yaml setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 " Use tabs in gitconfig files
 au FileType gitconfig setlocal noexpandtab

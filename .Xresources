@@ -1,5 +1,4 @@
 #include ".Xresources.hidpi"
-#include ".Xresources.gloom"
 
 ! Make Man pages colored
 *VT100.colorBDMode:     true
@@ -54,3 +53,5 @@ rofi.padding: 300
 rofi.fullscreen: true
 rofi.width: 1920
 rofi.lines: 20
+
+#include ".Xresources.duotone"
