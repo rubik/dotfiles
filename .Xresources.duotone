@@ -1,0 +1,49 @@
+! From: https://github.com/NerdyPepper/dotfiles/blob/master/X/.Xresources
+! ------------------------------------------------------------------------------
+!  Colors
+! ------------------------------------------------------------------------------
+!
+!------------------------------------------------------------------------------
+
+!#define base00 #212121
+#define base00 #252a35
+#define base01 #303030
+#define base02 #353535
+#define base03 #4A4A4A
+#define base04 #B2CCD6
+#define base05 #EEFFFF
+#define base06 #EBB205
+#define base07 #FFFFFF
+#define base08 #F07178
+#define base09 #F78C6C
+#define base0A #FDF200
+#define base0B #13CA91
+#define base0C #00FECA
+#define base0D #7898FB
+#define base0E #FF2079
+#define base0F #FF5370
+
+!  URxvt
+! ------------------------------------------------------------------------------
+
+*foreground:   base05
+*background:   base00
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base0D
+*color11:      base06
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
