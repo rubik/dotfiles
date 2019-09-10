@@ -12,7 +12,7 @@
 #define base03 #4A4A4A
 #define base04 #B2CCD6
 #define base05 #EEFFFF
-#define base06 #EEFFFF
+#define base06 #EBB205
 #define base07 #FFFFFF
 #define base08 #F07178
 #define base09 #F78C6C
@@ -42,14 +42,8 @@
 *color8:       base03
 *color9:       base09
 *color10:      base0D
-*color11:      base0E
+*color11:      base06
 *color12:      base04
 *color13:      base06
 *color14:      base0F
 *color15:      base07
-
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 1
-Xft.rgba: rgb
