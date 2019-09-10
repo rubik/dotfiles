@@ -1,5 +1,13 @@
 #include ".Xresources.hidpi"
-#include ".Xresources.gloom"
+#include ".Xresources.duotone"
+
+! Display settings
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 
 ! Make Man pages colored
 *VT100.colorBDMode:     true
