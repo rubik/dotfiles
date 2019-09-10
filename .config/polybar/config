@@ -14,7 +14,6 @@
 ;==========================================================
 
 [color]
-
 trans = #00000000
 white = #FFFFFF
 black = #000000
@@ -27,18 +26,17 @@ acolor = #FFFFFF
 curgent = #EF5350
 coccupied = #42A5F5
 
-shade1 = #004D40
-shade2 = #00695C
-shade3 = #00796B
-shade4 = #00897B
-shade5 = #009688
-shade6 = #26A69A
-shade7 = #4DB6AC
-shade8 = #80CBC4
+shade1 = #263238
+shade2 = #37474F
+shade3 = #455A64
+shade4 = #546E7A
+shade5 = #607D8B
+shade6 = #78909C
+shade7 = #90A4AE
+shade8 = #B0BEC5
 ashade8 = #2C2C2C
 
 ## Material Colors
-
 red = #e53935
 pink = #d81b60
 purple = #8e24aa
@@ -77,8 +75,14 @@ foreground = ${color.fg}
 
 ;==========================================================
 
+<<<<<<< HEAD
 font-0 = "Fantasque Sans Mono:pixelsize=12;2"
 font-1 = "Iosevka Nerd Font:pixelsize=13;3"
+=======
+font-0 = "Fantasque Sans Mono:pixelsize=10;2"
+font-1 = "Iosevka Nerd Font:pixelsize=11;2"
+font-2 = "Iosevka Nerd Font:pixelsize=11;4"
+>>>>>>> desktop
 
 ;== Module Location ========================================================
 
@@ -107,6 +111,7 @@ label-focused = 
 label-occupied = 
 label-urgent = 
 label-empty = 
+<<<<<<< HEAD
 
 label-empty-padding = 1
 label-focused-padding = 1
@@ -117,6 +122,23 @@ label-empty-foreground = ${color.fg}
 label-focused-foreground = ${color.acolor}
 label-urgent-foreground = ${color.curgent}
 label-occupied-foreground = "#f2331a"
+=======
+
+label-empty-padding = 1
+label-focused-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+
+label-empty-foreground = ${color.fg}
+label-focused-foreground = ${color.acolor}
+label-urgent-foreground = ${color.curgent}
+label-occupied-foreground = "#f2331a"
+
+label-empty-font = 2
+label-focused-font = 2
+label-urgent-font = 2
+label-occupied-font = 2
+>>>>>>> desktop
 
 [module/network]
 type = custom/script

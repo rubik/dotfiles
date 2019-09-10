@@ -1,8 +1,0 @@
-! HiDPI
-Xft.dpi: 124
-
-URxvt.font: xft:Meslo LG M for Powerline:pixelsize=15:antialias=true
-
-! rofi
-rofi.dpi: 124
-rofi.font: hack regular 12
