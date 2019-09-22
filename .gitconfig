@@ -15,7 +15,7 @@
 	s = status
 	d = diff
 	b = branch
-	ch = checkout
+	co = checkout
 	c = commit
 	cm = commit -m
 	cam = commit -am
