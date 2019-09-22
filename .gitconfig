@@ -22,7 +22,6 @@
 [core]
 	editor = nvim
 	autocrlf = false
-[commit]
 [color "diff"]
 	meta = bold
 	frag = yellow

@@ -20,3 +20,5 @@ bspc rule -a Gimp state=floating follow=on
 bspc rule -a Chromium desktop=^2
 bspc rule -a Opera desktop=^9
 bspc rule -a Pinentry follow=on state=floating
+bspc rule -a Libreoffice state=tiled
+bspc rule -a Blender state=tiled
