@@ -20,6 +20,8 @@ Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mattn/emmet-vim'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
 Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'lervag/vimtex', { 'for': 'tex' }
@@ -185,6 +187,12 @@ au FileType vue setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 " YAML settings
 au FileType yaml setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
+" Go settings
+au FileType go setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4 listchars=tab:\ \  listchars+=trail:. listchars+=nbsp:.
+
+" Rust settings
+au FileType rust setlocal textwidth=80
+
 " Use tabs in gitconfig files
 au FileType gitconfig setlocal noexpandtab
 
@@ -232,11 +240,8 @@ let g:tex_flavor = 'latex'
 let g:python_host_prog = '/usr/bin/python3'
 let g:python3_host_prog = '/usr/bin/python3'
 
-" Keep vim-radon always on
-let g:radon_always_on = 1
-
-" Vim-dg options
-let g:dg_highlight_builtins = 0
+" Auto format with RustFmt
+let g:rustfmt_autosave = 0
 
 " CtrlP options
 let g:ctrlp_map = '<leader>t'
