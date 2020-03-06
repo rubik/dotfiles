@@ -75,14 +75,8 @@ foreground = ${color.fg}
 
 ;==========================================================
 
-<<<<<<< HEAD
 font-0 = "Fantasque Sans Mono:pixelsize=12;2"
 font-1 = "Iosevka Nerd Font:pixelsize=13;3"
-=======
-font-0 = "Fantasque Sans Mono:pixelsize=10;2"
-font-1 = "Iosevka Nerd Font:pixelsize=11;2"
-font-2 = "Iosevka Nerd Font:pixelsize=11;4"
->>>>>>> desktop
 
 ;== Module Location ========================================================
 
@@ -111,7 +105,6 @@ label-focused = 
 label-occupied = 
 label-urgent = 
 label-empty = 
-<<<<<<< HEAD
 
 label-empty-padding = 1
 label-focused-padding = 1
@@ -122,23 +115,6 @@ label-empty-foreground = ${color.fg}
 label-focused-foreground = ${color.acolor}
 label-urgent-foreground = ${color.curgent}
 label-occupied-foreground = "#f2331a"
-=======
-
-label-empty-padding = 1
-label-focused-padding = 1
-label-urgent-padding = 1
-label-occupied-padding = 1
-
-label-empty-foreground = ${color.fg}
-label-focused-foreground = ${color.acolor}
-label-urgent-foreground = ${color.curgent}
-label-occupied-foreground = "#f2331a"
-
-label-empty-font = 2
-label-focused-font = 2
-label-urgent-font = 2
-label-occupied-font = 2
->>>>>>> desktop
 
 [module/network]
 type = custom/script
