@@ -265,7 +265,7 @@ let g:neomake_serialize_abort_on_error = 1
 let g:neomake_verbose = 1
 let g:neomake_c_enabled_makers = ['clang']
 let g:neomake_c_clang_maker = {
-   \ 'args': ['-Wall', '-Wextra', '-Weverything', '-pedantic'],
+   \ 'args': ['-Wall', '-Wextra', '-Weverything', '-pedantic', '-Wno-padded'],
    \ }
 let g:neomake_cpp_enabled_makers = ['clang']
 let g:neomake_cpp_clang_maker = {

@@ -27,3 +27,7 @@
 	frag = yellow
 [gpg]
 	program = gpg
+[rerere]
+	enabled = true
+[pull]
+	rebase = false

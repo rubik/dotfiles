@@ -14,9 +14,9 @@ alt + p
 alt + u
 	rofi -show ssh -monitor -1
 
-# Chromium
+# Firefox
 alt + shift + i
-	chromium
+	firefox
 
 # PCManFM
 alt + shift + p
@@ -53,6 +53,14 @@ super + 8
 	ponymix decrease 3
 super + 9
 	ponymix increase 3
+
+# Brightness
+XF86MonBrightnessUp
+	xbacklight -inc 10
+XF86MonBrightnessDown
+	xbacklight -dec 10
+XF86Display
+	xbacklight -set 60
 
 # Scrot
 Print
