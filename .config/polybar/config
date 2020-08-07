@@ -73,10 +73,13 @@ line-size = 2
 background = ${color.bg}
 foreground = ${color.fg}
 
+dpi-x = 114
+dpi-y = 114
+
 ;==========================================================
 
-font-0 = "Fantasque Sans Mono:pixelsize=12;2"
-font-1 = "Iosevka Nerd Font:pixelsize=13;3"
+font-0 = "FantasqueSansMono Nerd Font:pixelsize=12;2"
+;font-1 = "Iosevka Nerd Font:pixelsize=13;1"
 
 ;== Module Location ========================================================
 
@@ -128,8 +131,8 @@ type = internal/network
 interface = wlp3s0
 interval = 5
 
-format-connected = <label-connected>
-label-connected =  %essid%
+format-connected = "<label-connected>  "
+label-connected = " %essid%"
 label-connected-foreground = #ae81ff
 
 
@@ -145,14 +148,14 @@ label-connected-foreground = #ae81ff
 [module/date]
 type = internal/date
 interval = 20
-date = " %a %d, %H:%M"
+date = "  %a %d, %H:%M"
 label-padding = 1
 label-background = ${color.shade3}
 
 
 [module/time-miami]
 type = custom/script
-exec = TZ=America/New_York date +" %H:%M"
+exec = TZ=America/New_York date +"  %H:%M"
 label-padding = 1
 label-background = ${color.shade3}
 interval = 20
@@ -160,7 +163,7 @@ interval = 20
 
 [module/time-losangeles]
 type = custom/script
-exec = TZ=America/Los_Angeles date +" %H:%M"
+exec = TZ=America/Los_Angeles date +"  %H:%M"
 label-padding = 1
 label-background = ${color.shade3}
 interval = 20
@@ -168,7 +171,7 @@ interval = 20
 
 [module/volume]
 type = internal/pulseaudio
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume>  <label-volume>
 format-volume-padding = 2
 format-volume-background = ${color.shade6}
 label-volume = %percentage%%

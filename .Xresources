@@ -33,7 +33,7 @@ URxvt.geometry: 90x37
 URxvt.borderLess: false
 
 ! Font and letter spacing
-URxvt.letterSpace: 0
+URxvt.letterSpace: -0.5
 
 ! Perl extensions
 URxvt.perl-ext-common: default
