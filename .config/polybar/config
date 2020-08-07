@@ -75,8 +75,9 @@ foreground = ${color.fg}
 
 ;==========================================================
 
-font-0 = "Fantasque Sans Mono:pixelsize=12;2"
-font-1 = "Iosevka Nerd Font:pixelsize=13;3"
+font-0 = "Fantasque Sans Mono:pixelsize=10;2"
+font-1 = "Iosevka Nerd Font:pixelsize=11;2"
+font-2 = "Iosevka Nerd Font:pixelsize=11;4"
 
 ;== Module Location ========================================================
 
@@ -115,6 +116,11 @@ label-empty-foreground = ${color.fg}
 label-focused-foreground = ${color.acolor}
 label-urgent-foreground = ${color.curgent}
 label-occupied-foreground = "#f2331a"
+
+label-empty-font = 2
+label-focused-font = 2
+label-urgent-font = 2
+label-occupied-font = 2
 
 [module/network]
 type = custom/script
