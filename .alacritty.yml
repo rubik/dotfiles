@@ -12,7 +12,9 @@ window:
   gtk_theme_variant: dark
 
 font:
-  size: 10
+  size: 11
+  offset:
+    x: 1
   normal:
     family: Meslo LG M for Powerline
     style: Regular
