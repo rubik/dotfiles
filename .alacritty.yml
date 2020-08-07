@@ -47,3 +47,7 @@ colors:
     red: '#F78C6C'
     white: '#FFFFFF'
     yellow: '#EBB205'
+
+  cursor:
+    text: '#000000'
+    cursor: '#EEFFFF'
