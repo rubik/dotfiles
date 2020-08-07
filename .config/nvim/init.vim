@@ -20,7 +20,6 @@ Plug 'bling/vim-airline'
 Plug 'myusuf3/numbers.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mattn/emmet-vim'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }

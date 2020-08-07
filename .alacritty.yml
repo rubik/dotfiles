@@ -1,0 +1,53 @@
+scrolling:
+  # How many lines of scrollback to keep,
+  # '0' will disable scrolling.
+  history: 5000
+  multiplier: 3
+
+window:
+  dimensions:
+    lines: 90
+    columns: 37
+  decoration: none
+  gtk_theme_variant: dark
+
+font:
+  size: 10
+  normal:
+    family: Meslo LG M for Powerline
+    style: Regular
+  bold:
+    family: Meslo LG M for Powerline
+    style: Bold
+  italic:
+    family: Meslo LG M for Powerline
+    style: Italic
+
+colors:
+  primary:
+    background: '#252a35'
+    foreground: '#EEFFFF'
+
+  normal:
+    black: '#252a35'
+    blue: '#7898FB'
+    cyan: '#00FECA'
+    green: '#13CA91'
+    magenta: '#FF2079'
+    red: '#F07178'
+    white: '#EEFFFF'
+    yellow: '#FDF200'
+
+  bright:
+    black: '#4A4A4A'
+    blue: '#B2CCD6'
+    cyan: '#FF5370'
+    green: '#7898FB'
+    magenta: '#EBB205'
+    red: '#F78C6C'
+    white: '#FFFFFF'
+    yellow: '#EBB205'
+
+  cursor:
+    text: '#000000'
+    cursor: '#EEFFFF'

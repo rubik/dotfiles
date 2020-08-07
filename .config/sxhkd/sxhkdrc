@@ -4,7 +4,7 @@
 
 # terminal emulator
 alt + shift + Return
-	urxvt
+	alacritty
 
 # program launcher
 alt + p
@@ -24,15 +24,15 @@ alt + shift + p
 
 # Ranger
 alt + shift + o
-	urxvt -e ranger
+	alacritty -e ranger
 
 # HTop
 super + l
-	urxvt -e htop
+	alacritty -e htop
 
 # IPython
 super + p
-	urxvt -e ipython
+	alacritty -e ipython
 
 # Volume
 XF86AudioRaiseVolume
@@ -44,7 +44,7 @@ XF86AudioMute
 
 # Mixer
 alt + shift + m
-	urxvt -e alsamixer
+	alacritty -e alsamixer
 
 # Volume
 super + 7
