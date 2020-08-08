@@ -1,55 +1,60 @@
-scrolling:
-  # How many lines of scrollback to keep,
-  # '0' will disable scrolling.
-  history: 5000
-  multiplier: 3
-
-window:
-  dimensions:
-    lines: 90
-    columns: 37
-  decoration: none
-  gtk_theme_variant: dark
-
-font:
-  size: 11
-  offset:
-    x: 1
+colors:
+  bright:
+    black: '#4A4A4A'
+    blue: '#787878'
+    cyan: '#FF5370'
+    green: '#303030'
+    magenta: '#EEFFFF'
+    red: '#F78C6C'
+    white: '#FFFFFF'
+    yellow: '#EBCC05'
+  cursor:
+    cursor: '#DDEEEE'
+    text: '#212630'
   normal:
-    family: Meslo LG M for Powerline
-    style: Regular
+    black: '#000000'
+    blue: '#7898FB'
+    cyan: '#79ffe1'
+    green: '#13CA91'
+    magenta: '#FF3299'
+    red: '#F07178'
+    white: '#EEFFFF'
+    yellow: '#FDF200'
+  primary:
+    background: '#212630'
+    foreground: '#EEEEFF'
+font:
   bold:
     family: Meslo LG M for Powerline
     style: Bold
   italic:
     family: Meslo LG M for Powerline
     style: Italic
-
-colors:
-  primary:
-    background: '#252a35'
-    foreground: '#EEFFFF'
-
   normal:
-    black: '#252a35'
-    blue: '#7898FB'
-    cyan: '#00FECA'
-    green: '#13CA91'
-    magenta: '#FF2079'
-    red: '#F07178'
-    white: '#EEFFFF'
-    yellow: '#FDF200'
-
-  bright:
-    black: '#4A4A4A'
-    blue: '#B2CCD6'
-    cyan: '#FF5370'
-    green: '#7898FB'
-    magenta: '#EBB205'
-    red: '#F78C6C'
-    white: '#FFFFFF'
-    yellow: '#EBB205'
-
-  cursor:
-    text: '#000000'
-    cursor: '#EEFFFF'
+    family: Meslo LG M for Powerline
+    style: Regular
+  offset:
+    x: 1
+  size: 11
+key_bindings:
+- chars: "\eOH"
+  key: Home
+  mode: AppCursor
+- chars: "\e[H"
+  key: Home
+  mode: ~AppCursor
+- chars: "\eOF"
+  key: End
+  mode: AppCursor
+- chars: "\e[F"
+  key: End
+  mode: ~AppCursor
+scrolling:
+  history: 5000
+  multiplier: 3
+window:
+  decoration: none
+  dimensions:
+    columns: 37
+    lines: 90
+  gtk_theme_variant: dark
