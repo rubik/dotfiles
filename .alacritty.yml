@@ -12,7 +12,7 @@ colors:
     cursor: '#DDEEEE'
     text: '#212630'
   normal:
-    black: '#000000'
+    black: '#ba97ae'
     blue: '#7898FB'
     cyan: '#79ffe1'
     green: '#13CA91'
