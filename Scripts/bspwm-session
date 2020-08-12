@@ -18,14 +18,11 @@ setxkbmap it
 # Load cursor
 xsetroot -cursor_name left_ptr &
 
-# Run rxvt unicode daemon
-urxvtd -q -o -f &
-
 # Run PCManFM daemon
 pcmanfm -d &
 
 sxhkd -c ~/.config/sxhkd/sxhdkrc &
 
-urxvt &
+alacritty &
 
 exec bspwm

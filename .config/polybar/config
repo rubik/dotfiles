@@ -103,10 +103,10 @@ enable-click = false
 format = <label-state> <label-mode>
 
 format-background = ${color.shade2}
-label-focused = 
-label-occupied = 
-label-urgent = 
-label-empty = 
+label-focused = " "
+label-occupied = " "
+label-urgent = " "
+label-empty = " "
 
 label-empty-padding = 1
 label-focused-padding = 1

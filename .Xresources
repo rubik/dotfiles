@@ -1,4 +1,3 @@
-#include ".Xresources.hidpi"
 #include ".Xresources.duotone"
 
 ! Display settings
@@ -53,6 +52,7 @@ rofi.color-normal: argb:00B2C7D2, argb:ff678bdc, argb:00B2C7D2, argb:00ffffff, a
 rofi.color-active: #2de0a7, #ffffff, #2de0a7, #2de0a7, #2de0a7
 rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
 
+rofi.dpi: 125
 rofi.fake-transparency: true
 rofi.columns: 3
 rofi.separator-style: none
