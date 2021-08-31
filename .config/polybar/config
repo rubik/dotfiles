@@ -78,6 +78,7 @@ foreground = ${color.fg}
 font-0 = "Fantasque Sans Mono:pixelsize=10;2"
 font-1 = "Iosevka Nerd Font:pixelsize=11;2"
 font-2 = "Iosevka Nerd Font:pixelsize=11;4"
+font-3 = "Noto Sans Symbols2:pixelsize=11"
 
 ;== Module Location ========================================================
 
