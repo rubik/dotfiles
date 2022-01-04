@@ -25,6 +25,8 @@ Plug 'SirVer/ultisnips' | Plug 'rubik/vim-snippets'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'vmchale/just-vim'
+Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
 call plug#end()
 
@@ -192,8 +194,14 @@ au FileType go setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4 listcha
 " Rust settings
 au FileType rust setlocal textwidth=80
 
+" Protobuf settings
+au FileType proto setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+
 " Use tabs in gitconfig files
 au FileType gitconfig setlocal noexpandtab
+
+" Solidity files
+au BufNewFile,BufRead *.sol set filetype=solidity
 
 " Enable Neomake on buffer read/write
 au BufWritePost * Neomake
