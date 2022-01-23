@@ -101,10 +101,6 @@ enable-click = false
 format = <label-state> <label-mode>
 
 format-background = ${color.shade2}
-;label-focused = 
-;label-occupied = 
-;label-urgent = 
-;label-empty = 
 label-focused = %{T1}%{T-}
 label-occupied = %{T1}%{T-}
 label-urgent = %{T1}%{T-}
@@ -116,8 +112,8 @@ label-urgent-padding = 1
 label-occupied-padding = 1
 
 label-empty-foreground = ${color.fg}
-label-focused-foreground = ${color.green}
-label-urgent-foreground = ${color.purple}
+label-focused-foreground = ${color.pink}
+label-urgent-foreground = ${color.curgent}
 label-occupied-foreground = ${color.fg}
 
 label-empty-font = 2
