@@ -34,8 +34,8 @@ font:
     family: Meslo LG M for Powerline
     style: Regular
   offset:
-    x: 1
-  size: 9
+    x: 2
+  size: 6
 key_bindings:
 - chars: "\eOH"
   key: Home
